@@ -1,0 +1,4338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ToolNova AI - Best AI Tools, Reviews & Guides</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="AI tools, best AI tools, AI software, AI apps, ChatGPT tools, AI reviews, AI guides" name="keywords">
+    <meta content="Discover the best AI tools, software, apps, reviews, comparisons and practical AI guides." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Inside <head> after bootstrap.min.css -->
+<link href="css/toolnova.css" rel="stylesheet">
+
+
+<style id="toolnova-interactions">
+/* ToolNova AI Robot Premium Animations */
+.toolnova-robot {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    transform-origin: center bottom;
+    will-change: transform, filter;
+}
+
+.toolnova-robot svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* Base floating animation */
+@keyframes float-robot {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(-1.5deg); }
+}
+
+.robot-base-svg {
+    animation: float-robot 6s ease-in-out infinite;
+}
+
+/* Neon Chroma Effects */
+.robot-core, .robot-core-inner, .antenna-tip, .eye-pupil {
+    transition: fill 0.4s ease, filter 0.4s ease;
+}
+
+.antenna-tip {
+    filter: drop-shadow(0 0 6px rgba(0, 234, 255, 0.8));
+}
+
+/* Eye Hover & Shine Effects */
+.toolnova-robot .eye-pupil {
+    transition: transform 0.1s linear, fill 0.3s ease, filter 0.3s ease;
+    fill: #00eaff;
+    filter: drop-shadow(0 0 5px rgba(0, 234, 255, 0.6));
+}
+
+.toolnova-robot .eye-socket:hover ~ .left-pupil,
+.toolnova-robot .eye-socket:hover ~ .right-pupil {
+    fill: #8a2be2;
+    filter: drop-shadow(0 0 12px rgba(138, 43, 226, 0.8));
+}
+
+@keyframes eye-shine-sweep {
+    0% { transform: translateX(-6px); opacity: 0; }
+    50% { opacity: 0.9; }
+    100% { transform: translateX(6px); opacity: 0; }
+}
+
+.toolnova-robot .eye-shine {
+    animation: eye-shine-sweep 4s ease-in-out infinite;
+}
+
+/* AI Active Mode (Red/Blue Pulsing) */
+@keyframes ai-pulse-left {
+    0%, 100% { fill: #ff4d4d; filter: drop-shadow(0 0 15px rgba(255, 77, 77, 0.8)); }
+    50% { fill: #4d79ff; filter: drop-shadow(0 0 15px rgba(77, 121, 255, 0.8)); }
+}
+@keyframes ai-pulse-right {
+    0%, 100% { fill: #4d79ff; filter: drop-shadow(0 0 15px rgba(77, 121, 255, 0.8)); }
+    50% { fill: #ff4d4d; filter: drop-shadow(0 0 15px rgba(255, 77, 77, 0.8)); }
+}
+
+.toolnova-robot.ai-active .left-pupil {
+    animation: ai-pulse-left 2s ease-in-out infinite;
+}
+.toolnova-robot.ai-active .right-pupil {
+    animation: ai-pulse-right 2s ease-in-out infinite;
+}
+.toolnova-robot.ai-active .robot-core {
+    fill: #ffffff;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+/* Hover Scale / Tilt Effect */
+@media (hover: hover) {
+    .toolnova-robot:hover .robot-base-svg {
+        animation: float-robot 6s ease-in-out infinite, hover-scale 1.5s ease-in-out forwards;
+    }
+    @keyframes hover-scale {
+        0% { transform: scale(1); }
+        100% { transform: scale(1.05) rotate(2deg); }
+    }
+}
+
+/* Hand Wave Animation */
+.robot-arm {
+    transform-origin: top center;
+    transition: transform 0.3s cubic-bezier(0.25, 1.5, 0.5, 1);
+}
+
+@keyframes wave-hand {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    75% { transform: rotate(20deg); }
+}
+
+.toolnova-robot.waving .right-hand,
+.toolnova-robot.waving .left-hand {
+    animation: wave-hand 0.8s ease-in-out 2;
+}
+
+.toolnova-robot .robot-hand:hover {
+    fill: #e2e8f0;
+    filter: drop-shadow(0 0 8px rgba(21, 172, 225, 0.6));
+    cursor: pointer;
+}
+
+/* Accessibility & Mobile Adjustments */
+@media (prefers-reduced-motion: reduce) {
+    .robot-base-svg,
+    .toolnova-robot .eye-shine,
+    .toolnova-robot.ai-active .left-pupil,
+    .toolnova-robot.ai-active .right-pupil {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .toolnova-robot {
+        max-width: 280px;
+    }
+    @keyframes float-robot {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+    }
+}
+
+
+
+/* =========================================
+   TOOLNOVA AI - PREMIUM ROBOT ANIMATIONS
+========================================= */
+
+.toolnova-robot {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    transform-origin: center bottom;
+    will-change: transform, filter;
+}
+
+.toolnova-robot svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* 6. Neon Chroma / SVG Filters (Base styling) */
+.toolnova-robot .antenna-tip,
+.toolnova-robot .eye-pupil,
+.toolnova-robot .robot-core-inner {
+    transition: fill 0.4s ease, filter 0.4s ease;
+}
+
+.antenna-tip {
+    fill: #00eaff;
+    filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.8));
+}
+
+.robot-core-inner {
+    fill: #15ACE1;
+    filter: drop-shadow(0 0 10px rgba(21, 172, 225, 0.6));
+}
+
+
+/* 1. Eye Hover Glow */
+.toolnova-robot .eye-pupil {
+    fill: #00eaff;
+    filter: drop-shadow(0 0 6px rgba(0, 234, 255, 0.6));
+    transition: filter 0.3s ease, fill 0.3s ease, transform 0.1s linear;
+}
+
+.toolnova-robot .left-eye-group:hover .eye-pupil,
+.toolnova-robot .right-eye-group:hover .eye-pupil {
+    fill: #8a2be2; /* Purple neon on hover */
+    filter: drop-shadow(0 0 14px rgba(138, 43, 226, 0.9));
+}
+
+.toolnova-robot .eye-socket {
+    cursor: pointer;
+}
+
+
+/* 3. Eye Shine Animation */
+@keyframes eye-shine-sweep {
+    0% { transform: translateX(-6px); opacity: 0; }
+    50% { opacity: 0.95; }
+    100% { transform: translateX(6px); opacity: 0; }
+}
+
+.toolnova-robot .eye-shine {
+    animation: eye-shine-sweep 4.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+
+/* 4. Robot Floating */
+@keyframes float-robot {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(-1.5deg); }
+}
+
+.robot-base-svg {
+    animation: float-robot 6s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+
+/* 7. Hover Scale / Tilt Effect */
+@media (hover: hover) {
+    .toolnova-robot:hover .robot-base-svg {
+        animation: float-robot 6s ease-in-out infinite, hover-scale-tilt 1s ease-in-out forwards;
+    }
+    @keyframes hover-scale-tilt {
+        0% { transform: scale(1) rotate(0deg); }
+        100% { transform: scale(1.05) rotate(2deg); }
+    }
+}
+
+
+/* 2. AI-Mode Glow */
+@keyframes ai-pulse-left {
+    0%, 100% { fill: #ff4d4d; filter: drop-shadow(0 0 16px rgba(255, 77, 77, 0.8)); }
+    50% { fill: #4d79ff; filter: drop-shadow(0 0 16px rgba(77, 121, 255, 0.8)); }
+}
+@keyframes ai-pulse-right {
+    0%, 100% { fill: #4d79ff; filter: drop-shadow(0 0 16px rgba(77, 121, 255, 0.8)); }
+    50% { fill: #ff4d4d; filter: drop-shadow(0 0 16px rgba(255, 77, 77, 0.8)); }
+}
+
+.toolnova-robot.ai-active .left-pupil {
+    animation: ai-pulse-left 2.5s ease-in-out infinite;
+}
+.toolnova-robot.ai-active .right-pupil {
+    animation: ai-pulse-right 2.5s ease-in-out infinite;
+}
+.toolnova-robot.ai-active .robot-core {
+    fill: #ff00ff; /* Pink neon aura */
+    filter: drop-shadow(0 0 25px rgba(255, 0, 255, 0.6));
+}
+.toolnova-robot.ai-active .robot-core-inner {
+    fill: #ffffff;
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9));
+}
+.toolnova-robot.ai-active .antenna-tip {
+    fill: #ff00ff;
+    filter: drop-shadow(0 0 16px rgba(255, 0, 255, 0.9));
+}
+
+
+/* 5. Hand Wave Animation */
+.robot-arm {
+    transform-origin: 45px 200px; /* Pivots exactly from the shoulder */
+    transition: transform 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+}
+.right-arm-group {
+    transform-origin: 255px 200px;
+}
+
+@keyframes wave-hand {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-25deg); }
+    75% { transform: rotate(25deg); }
+}
+
+.toolnova-robot.waving .right-arm-group,
+.toolnova-robot.waving .left-arm-group {
+    animation: wave-hand 0.8s ease-in-out 2;
+}
+
+.toolnova-robot .robot-hand {
+    cursor: pointer;
+    transition: fill 0.3s ease, filter 0.3s ease;
+}
+.toolnova-robot .robot-hand:hover,
+.toolnova-robot .robot-hand:focus {
+    fill: #00eaff;
+    filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.7));
+    outline: none;
+}
+
+
+/* 9. Mobile Responsive Sizing */
+@media (max-width: 768px) {
+    .toolnova-robot {
+        max-width: 300px;
+    }
+    /* Reduce floating intensity on smaller screens */
+    @keyframes float-robot {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-6px) rotate(-1deg); }
+    }
+    @keyframes hover-scale-tilt {
+        0% { transform: scale(1) rotate(0deg); }
+        100% { transform: scale(1.03) rotate(1deg); }
+    }
+}
+
+
+/* 10. prefers-reduced-motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .robot-base-svg,
+    .toolnova-robot .eye-shine,
+    .toolnova-robot.ai-active .left-pupil,
+    .toolnova-robot.ai-active .right-pupil,
+    .toolnova-robot.waving .right-arm-group,
+    .toolnova-robot.waving .left-arm-group {
+        animation: none !important;
+        transition: none !important;
+    }
+    .toolnova-robot:hover .robot-base-svg {
+        transform: scale(1.02) !important; /* Minimal static tilt for visual feedback */
+    }
+}
+
+
+/* =========================================
+   TOOLNOVA AI - PREMIUM ROBOT ANIMATIONS
+========================================= */
+
+.toolnova-robot {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    transform-origin: center bottom;
+    will-change: transform, filter;
+}
+
+.toolnova-robot svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* Neon Chroma Base Styling */
+.toolnova-robot .antenna-tip,
+.toolnova-robot .eye-pupil,
+.toolnova-robot .robot-core-inner {
+    transition: fill 0.4s ease, filter 0.4s ease;
+}
+
+.antenna-tip {
+    fill: #00eaff;
+    filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.8));
+}
+
+.robot-core-inner {
+    fill: #15ACE1;
+    filter: drop-shadow(0 0 10px rgba(21, 172, 225, 0.6));
+}
+
+/* 1. Eye Hover Glow */
+.toolnova-robot .eye-pupil {
+    fill: #00eaff;
+    filter: drop-shadow(0 0 6px rgba(0, 234, 255, 0.6));
+    transition: filter 0.3s ease, fill 0.3s ease;
+}
+.toolnova-robot .left-eye-group:hover .eye-pupil,
+.toolnova-robot .right-eye-group:hover .eye-pupil {
+    fill: #8a2be2; /* Purple neon on hover */
+    filter: drop-shadow(0 0 14px rgba(138, 43, 226, 0.9));
+}
+.toolnova-robot .eye-socket { cursor: pointer; }
+
+/* 3. Eye Shine Animation */
+@keyframes eye-shine-sweep {
+    0% { transform: translateX(-6px); opacity: 0; }
+    50% { opacity: 0.95; }
+    100% { transform: translateX(6px); opacity: 0; }
+}
+.toolnova-robot .eye-shine {
+    animation: eye-shine-sweep 4.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* 4. Robot Floating */
+@keyframes float-robot {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+.robot-base-svg {
+    animation: float-robot 6s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+/* 7. Hover Scale / Tilt Effect */
+@media (hover: hover) {
+    .toolnova-robot:hover .robot-base-svg {
+        animation: float-robot 6s ease-in-out infinite, hover-scale-tilt 1s ease-in-out forwards;
+    }
+    @keyframes hover-scale-tilt {
+        0% { transform: scale(1) translateY(0); }
+        100% { transform: scale(1.05) translateY(-6px); } /* Slight scale up while floating */
+    }
+}
+
+/* 2. AI-Mode Glow */
+@keyframes ai-pulse-left {
+    0%, 100% { fill: #ff4d4d; filter: drop-shadow(0 0 16px rgba(255, 77, 77, 0.8)); }
+    50% { fill: #4d79ff; filter: drop-shadow(0 0 16px rgba(77, 121, 255, 0.8)); }
+}
+@keyframes ai-pulse-right {
+    0%, 100% { fill: #4d79ff; filter: drop-shadow(0 0 16px rgba(77, 121, 255, 0.8)); }
+    50% { fill: #ff4d4d; filter: drop-shadow(0 0 16px rgba(255, 77, 77, 0.8)); }
+}
+.toolnova-robot.ai-active .left-pupil { animation: ai-pulse-left 2.5s ease-in-out infinite; }
+.toolnova-robot.ai-active .right-pupil { animation: ai-pulse-right 2.5s ease-in-out infinite; }
+.toolnova-robot.ai-active .robot-core { fill: #ff00ff; filter: drop-shadow(0 0 25px rgba(255, 0, 255, 0.6)); }
+.toolnova-robot.ai-active .robot-core-inner { fill: #ffffff; filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)); }
+.toolnova-robot.ai-active .antenna-tip { fill: #ff00ff; filter: drop-shadow(0 0 16px rgba(255, 0, 255, 0.9)); }
+
+/* 5. Hand Wave Animation */
+.robot-arm {
+    transform-origin: 45px 200px; /* Pivots from shoulder */
+    transition: transform 0.4s cubic-bezier(0.25, 1.5, 0.5, 1);
+}
+.right-arm-group { transform-origin: 255px 200px; }
+
+@keyframes wave-hand {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-25deg); }
+    75% { transform: rotate(25deg); }
+}
+.toolnova-robot.waving .right-arm-group,
+.toolnova-robot.waving .left-arm-group {
+    animation: wave-hand 0.8s ease-in-out 2;
+}
+.toolnova-robot .robot-hand {
+    cursor: pointer;
+    transition: fill 0.3s ease, filter 0.3s ease;
+}
+.toolnova-robot .robot-hand:hover, .toolnova-robot .robot-hand:focus {
+    fill: #00eaff;
+    filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.7));
+    outline: none;
+}
+
+/* 9. Mobile Responsive Sizing */
+@media (max-width: 768px) {
+    .toolnova-robot { max-width: 300px; }
+    @keyframes float-robot {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); } /* Lower intensity */
+    }
+}
+
+/* 10. prefers-reduced-motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .robot-base-svg, .toolnova-robot .eye-shine,
+    .toolnova-robot.ai-active .left-pupil, .toolnova-robot.ai-active .right-pupil,
+    .toolnova-robot.waving .right-arm-group, .toolnova-robot.waving .left-arm-group {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+/* =========================================
+   TOOLNOVA AI - PREMIUM HUMANOID ROBOT SYSTEM
+   ========================================= */
+
+:root {
+    --tn-cyan: #00eaff;
+    --tn-blue: #4d79ff;
+    --tn-purple: #8a2be2;
+    --tn-pink: #ff00ff;
+    --tn-red: #ff4d4d;
+    --tn-body: #eef2f9;
+    --tn-dark: #0f172a;
+    --tn-metal: #334155;
+}
+
+.tn-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #050a16;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Accessible AI Button */
+.tn-ai-btn {
+    margin: 40px auto;
+    padding: 12px 24px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #14183e;
+    background: #eef2f9;
+    border: 2px solid #14183e;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.tn-ai-btn:hover, .tn-ai-btn:focus-visible {
+    background: var(--tn-cyan);
+    outline: none;
+}
+.tn-ai-btn[aria-pressed="true"] {
+    background: var(--tn-purple);
+    color: #ffffff;
+    border-color: var(--tn-purple);
+}
+
+/* =========================================
+   10. TRANSFORM ARCHITECTURE
+   ========================================= */
+.tn-robot-stage {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Max width for full body */
+    margin: 0 auto;
+}
+
+.tn-robot-float {
+    width: 100%;
+    /* Effect 04: Smooth Floating */
+    animation: tn-float 7s ease-in-out infinite;
+    will-change: transform;
+}
+
+.tn-robot-hover {
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+    /* JS applies hover scale/tilt here */
+}
+
+.tn-robot {
+    position: relative;
+    width: 100%;
+}
+
+.tn-robot-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* =========================================
+   6. SOFT NEON / CHROMA SYSTEM & AURA
+   ========================================= */
+.tn-aura {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 80%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--tn-blue) 0%, transparent 70%);
+    opacity: 0.15;
+    filter: blur(50px);
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.tn-robot-hover:hover .tn-aura {
+    opacity: 0.3;
+}
+
+.tn-robot.ai-active .tn-aura {
+    background: radial-gradient(circle, var(--tn-purple) 0%, transparent 70%);
+    opacity: 0.3;
+    animation: tn-aura-pulse 4s ease-in-out infinite;
+}
+
+@keyframes tn-aura-pulse {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.4; }
+}
+
+/* =========================================
+   4. EFFECT 04: SMOOTH ROBOT FLOATING
+   ========================================= */
+@keyframes tn-float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-10px) translateX(-5px); }
+    50% { transform: translateY(0) translateX(0); }
+    75% { transform: translateY(10px) translateX(5px); }
+}
+
+/* =========================================
+   7. EFFECT 07: FLOATING + HOVER RESPONSE
+   ========================================= */
+@media (hover: hover) {
+    .tn-robot-hover:hover {
+        /* Base hover scale. Tilt added dynamically by JS */
+        transform: scale(1.03);
+        filter: brightness(1.1);
+    }
+}
+
+/* =========================================
+   1. EFFECT 01: SVG EYE HOVER
+   ========================================= */
+.tn-pupil {
+    fill: var(--tn-cyan);
+    transition: fill 0.3s ease, filter 0.3s ease;
+}
+
+@media (hover: hover) {
+    .tn-left-eye:hover .tn-pupil,
+    .tn-right-eye:hover .tn-pupil {
+        fill: var(--tn-purple);
+        filter: drop-shadow(0 0 10px var(--tn-purple)) drop-shadow(0 0 18px var(--tn-cyan));
+    }
+}
+
+.tn-left-eye:focus-visible, .tn-right-eye:focus-visible {
+    outline: none;
+}
+.tn-left-eye:focus-visible .tn-pupil,
+.tn-right-eye:focus-visible .tn-pupil {
+    fill: var(--tn-blue);
+    filter: drop-shadow(0 0 12px var(--tn-blue));
+}
+
+/* =========================================
+   2. EFFECT 02: ACTIVE AI MODE
+   ========================================= */
+@keyframes tn-ai-pulse {
+    0%, 100% { 
+        fill: var(--tn-blue);
+        filter: drop-shadow(0 0 8px var(--tn-blue)) drop-shadow(0 0 16px var(--tn-blue));
+    }
+    50% { 
+        fill: var(--tn-red);
+        filter: drop-shadow(0 0 10px var(--tn-red)) drop-shadow(0 0 20px var(--tn-red));
+    }
+}
+
+.tn-robot.ai-active .tn-pupil {
+    animation: tn-ai-pulse 4s ease-in-out infinite;
+}
+
+.tn-robot.ai-active .tn-core-inner {
+    fill: var(--tn-pink);
+    filter: drop-shadow(0 0 25px var(--tn-pink));
+}
+
+/* =========================================
+   3. EFFECT 03: SVG EYE SHINE + GLOW
+   ========================================= */
+@keyframes tn-shine-sweep {
+    0% { transform: translateX(-16px); opacity: 0; }
+    20% { opacity: 0.8; }
+    50% { transform: translateX(0); opacity: 0; }
+    100% { transform: translateX(16px); opacity: 0; }
+}
+
+.tn-shine {
+    animation: tn-shine-sweep 6s ease-in-out infinite;
+    pointer-events: none; /* Never block hover/click */
+}
+
+/* =========================================
+   5. EFFECT 05: HAND / WAVE ANIMATION
+   ========================================= */
+.tn-right-arm { transform-origin: 290px 270px; }
+.tn-left-arm { transform-origin: 110px 270px; }
+
+@keyframes tn-wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-25deg); }
+    75% { transform: rotate(25deg); }
+}
+
+.tn-robot.hand-waving .tn-right-arm,
+.tn-robot.hand-waving .tn-left-arm {
+    animation: tn-wave 0.8s ease-in-out 2;
+}
+
+.tn-hand {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.tn-hand:hover, .tn-hand:focus-visible {
+    outline: none;
+    filter: drop-shadow(0 0 10px var(--tn-cyan));
+}
+
+/* =========================================
+   13. MOBILE / RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+    .tn-robot-stage { max-width: 320px; }
+    
+    @keyframes tn-float {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(-5px) translateX(0); }
+    }
+    
+    .tn-aura { filter: blur(30px); opacity: 0.1; }
+}
+
+/* =========================================
+   15. REDUCED MOTION ACCESSIBILITY
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    .tn-robot-float,
+    .tn-shine,
+    .tn-robot.ai-active .tn-pupil,
+    .tn-robot.ai-active .tn-aura,
+    .tn-robot.hand-waving .tn-right-arm,
+    .tn-robot.hand-waving .tn-left-arm {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .tn-robot-hover:hover { transform: none !important; }
+    
+    .tn-shine { opacity: 0.5; transform: translateX(-4px); }
+    .tn-robot.ai-active .tn-pupil { fill: var(--tn-blue); }
+}
+
+
+/* =========================================
+   TOOLNOVA AI - PREMIUM 3D HUMANOID ROBOT
+   ========================================= */
+
+:root {
+    --tn-cyan: #00eaff;
+    --tn-blue: #4d79ff;
+    --tn-purple: #8a2be2;
+    --tn-pink: #ff00ff;
+    --tn-red: #ff4d4d;
+    --tn-body: #eef2f9;
+    --tn-dark: #0f172a;
+    --tn-metal: #334155;
+    --tn-gold: #ca8a04;
+}
+
+.tn-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #050a16;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.tn-ai-btn {
+    margin: 40px auto;
+    padding: 12px 24px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #eef2f9;
+    background: var(--tn-dark);
+    border: 2px solid var(--tn-gold);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+.tn-ai-btn:hover, .tn-ai-btn:focus-visible {
+    background: var(--tn-gold);
+    color: var(--tn-dark);
+    outline: none;
+}
+.tn-ai-btn[aria-pressed="true"] {
+    background: var(--tn-purple);
+    color: #ffffff;
+    border-color: var(--tn-purple);
+}
+
+/* Transform Architecture */
+.tn-robot-stage {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.tn-robot-float {
+    width: 100%;
+    animation: tn-float 7s ease-in-out infinite;
+    will-change: transform;
+}
+
+.tn-robot-hover {
+    width: 100%;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+}
+
+.tn-robot {
+    position: relative;
+    width: 100%;
+}
+
+.tn-robot-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* 3D Chromatic Aura */
+.tn-aura {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 80%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--tn-blue) 0%, transparent 70%);
+    opacity: 0.25;
+    filter: blur(60px);
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+.tn-robot-hover:hover .tn-aura {
+    opacity: 0.4;
+}
+
+.tn-robot.ai-active .tn-aura {
+    background: radial-gradient(circle, var(--tn-purple) 0%, transparent 70%);
+    opacity: 0.4;
+    animation: tn-aura-pulse 4s ease-in-out infinite;
+}
+
+@keyframes tn-aura-pulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes tn-float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-10px) translateX(-5px); }
+    50% { transform: translateY(0) translateX(0); }
+    75% { transform: translateY(10px) translateX(5px); }
+}
+
+@media (hover: hover) {
+    .tn-robot-hover:hover {
+        transform: scale(1.03);
+        filter: brightness(1.15) drop-shadow(0 0 20px rgba(77, 121, 255, 0.3));
+    }
+}
+
+/* Eye Hover */
+.tn-pupil { transition: filter 0.3s ease; }
+
+@media (hover: hover) {
+    .tn-left-eye:hover .tn-pupil,
+    .tn-right-eye:hover .tn-pupil {
+        filter: drop-shadow(0 0 15px var(--tn-purple)) drop-shadow(0 0 25px var(--tn-cyan));
+    }
+}
+
+.tn-left-eye:focus-visible, .tn-right-eye:focus-visible { outline: none; }
+.tn-left-eye:focus-visible .tn-pupil,
+.tn-right-eye:focus-visible .tn-pupil {
+    filter: drop-shadow(0 0 18px var(--tn-blue));
+}
+
+/* AI Mode */
+@keyframes tn-ai-pulse {
+    0%, 100% { filter: drop-shadow(0 0 12px var(--tn-blue)) drop-shadow(0 0 24px var(--tn-blue)); }
+    50% { filter: drop-shadow(0 0 15px var(--tn-red)) drop-shadow(0 0 30px var(--tn-red)); }
+}
+
+.tn-robot.ai-active .tn-pupil { animation: tn-ai-pulse 4s ease-in-out infinite; }
+.tn-robot.ai-active .tn-core-inner { fill: var(--tn-pink) !important; filter: drop-shadow(0 0 30px var(--tn-pink)) !important; }
+
+/* Eye Shine */
+@keyframes tn-shine-sweep {
+    0% { transform: translateX(-12px); opacity: 0; }
+    20% { opacity: 0.9; }
+    50% { transform: translateX(0); opacity: 0; }
+    100% { transform: translateX(12px); opacity: 0; }
+}
+.tn-shine { animation: tn-shine-sweep 6s ease-in-out infinite; pointer-events: none; }
+
+/* Hand Wave */
+.tn-right-arm { transform-origin: 290px 270px; }
+.tn-left-arm { transform-origin: 110px 270px; }
+@keyframes tn-wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-25deg); }
+    75% { transform: rotate(25deg); }
+}
+.tn-robot.hand-waving .tn-right-arm,
+.tn-robot.hand-waving .tn-left-arm { animation: tn-wave 0.8s ease-in-out 2; }
+.tn-hand { cursor: pointer; transition: filter 0.3s ease; }
+.tn-hand:hover, .tn-hand:focus-visible { outline: none; filter: drop-shadow(0 0 15px var(--tn-cyan)); }
+
+/* =========================================
+   CHEST MECHANISM & INTERNAL SYSTEM
+   ========================================= */
+.tn-ai-core-btn { cursor: pointer; transition: transform 0.3s ease; transform-origin: 200px 320px; }
+.tn-ai-core-btn:hover { transform: scale(1.05); }
+.tn-ai-core-btn:focus-visible { outline: none; filter: drop-shadow(0 0 15px var(--tn-gold)); }
+
+.tn-core-ring { transform-origin: 200px 320px; transition: transform 0.5s ease; }
+.tn-robot.core-active .tn-core-ring { transform: rotate(45deg); }
+
+.tn-internal-system { opacity: 0; transition: opacity 0.8s ease; pointer-events: none; }
+.tn-robot.chest-open .tn-internal-system { opacity: 1; }
+
+.tn-chest-armor-left { transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); transform-origin: 110px 300px; }
+.tn-chest-armor-right { transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); transform-origin: 290px 300px; }
+
+.tn-robot.chest-open .tn-chest-armor-left { transform: translateX(-30px) rotate(-10deg); }
+.tn-robot.chest-open .tn-chest-armor-right { transform: translateX(30px) rotate(10deg); }
+
+/* Gears */
+.tn-gears { transform-origin: center; opacity: 0; transition: opacity 0.5s; }
+.tn-robot.chest-open .tn-gears { opacity: 1; animation: tn-rotate 4s linear infinite; }
+#gear1 { transform-origin: 145px 350px; }
+#gear2 { transform-origin: 255px 350px; animation-direction: reverse !important; }
+
+@keyframes tn-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* Sparks */
+.tn-sparks { opacity: 0; }
+.tn-robot.chest-open .tn-sparks { animation: tn-spark-flicker 0.2s linear infinite 0.8s; }
+#spark2 { animation-delay: 1.2s !important; }
+
+@keyframes tn-spark-flicker {
+    0% { opacity: 0; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(2px); }
+    100% { opacity: 0; transform: translateY(4px); }
+}
+
+/* =========================================
+   FEATURE EXPLORER CALLOUT
+   ========================================= */
+.tn-callout {
+    position: absolute;
+    width: 280px;
+    padding: 16px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+    border: 1px solid var(--tn-cyan);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+    color: #fff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+.tn-callout.visible { opacity: 1; transform: translateY(0); }
+.tn-callout h4 { margin: 0 0 8px 0; font-size: 14px; color: var(--tn-cyan); text-transform: uppercase; letter-spacing: 1px; }
+.tn-callout p { margin: 0; font-size: 13px; line-height: 1.4; color: #cbd5e1; }
+.tn-callout-arrow {
+    position: absolute;
+    width: 0; height: 0;
+    border-style: solid;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .tn-robot-stage { max-width: 320px; }
+    @keyframes tn-float { 0%, 100% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-5px) translateX(0); } }
+    .tn-aura { filter: blur(40px); opacity: 0.15; }
+    .tn-callout { width: 220px; padding: 12px; }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .tn-robot-float, .tn-shine, .tn-robot.ai-active .tn-pupil, .tn-robot.ai-active .tn-aura,
+    .tn-robot.hand-waving .tn-right-arm, .tn-robot.hand-waving .tn-left-arm,
+    .tn-robot.chest-open .tn-gears, .tn-robot.chest-open .tn-sparks {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+
+/* FAHAD */
+
+
+:root {
+    --tn-cyan: #00eaff;
+    --tn-blue: #4d79ff;
+    --tn-purple: #8a2be2;
+    --tn-pink: #ff00ff;
+    --tn-red: #ff4d4d;
+    --tn-dark: #0f172a;
+}
+
+.tn-page {
+    margin: 0;
+    min-height: 100vh;
+    background: #050a16;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    overflow: hidden;
+}
+
+/* UI Deck */
+.tn-ui-deck {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+    z-index: 100;
+}
+.tn-ui-btn {
+    padding: 8px 16px;
+    background: var(--tn-dark);
+    color: #fff;
+    border: 1px solid var(--tn-cyan);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+.tn-ui-btn:hover { background: var(--tn-cyan); color: var(--tn-dark); }
+.tn-ui-btn.active { background: var(--tn-purple); border-color: var(--tn-purple); }
+
+/* Stage */
+.tn-robot-stage {
+    position: relative;
+    width: 400px;
+    height: 800px;
+    max-width: 90vw;
+    max-height: 75vh;
+}
+.tn-floor {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 300px;
+    height: 80px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse, rgba(0,234,255,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.tn-aura {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 80%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--tn-blue) 0%, transparent 70%);
+    opacity: 0.25;
+    filter: blur(60px);
+    z-index: -1;
+}
+.tn-robot-float { width: 100%; height: 100%; animation: tn-float 7s ease-in-out infinite; }
+.tn-robot-hover { width: 100%; height: 100%; transition: transform 0.4s ease; }
+.tn-robot { position: relative; width: 100%; height: 100%; }
+.tn-robot-svg, .tn-car-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: visible; }
+.tn-car-svg { opacity: 0; transform: scale(0); transition: opacity 0.8s ease, transform 0.8s ease; }
+
+/* Feature Callout */
+.tn-callout {
+    position: absolute;
+    width: 260px;
+    padding: 14px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid var(--tn-cyan);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 50;
+    top: 20%;
+    left: 60%;
+}
+.tn-callout.visible { opacity: 1; transform: translateY(0); }
+.tn-callout h4 { margin: 0 0 6px 0; font-size: 13px; color: var(--tn-cyan); text-transform: uppercase; }
+.tn-callout p { margin: 0; font-size: 12px; color: #cbd5e1; }
+
+/* Eyes */
+.tn-pupil { transition: fill 0.3s ease, filter 0.3s ease; }
+.tn-shine { animation: tn-shine 6s ease-in-out infinite; pointer-events: none; }
+@keyframes tn-shine { 0% { transform: translateX(-12px); opacity: 0; } 20% { opacity: 0.9; } 50% { transform: translateX(0); opacity: 0; } 100% { transform: translateX(12px); opacity: 0; } }
+
+/* AI Mode & Core */
+.tn-ai-core-btn { cursor: pointer; transition: transform 0.3s ease; transform-origin: 200px 320px; }
+.tn-ai-core-btn:hover { transform: scale(1.05); }
+.tn-core-ring { transform-origin: 200px 320px; transition: transform 0.5s ease; }
+.tn-robot.core-active .tn-core-ring { transform: rotate(45deg); }
+
+.tn-internal-system { opacity: 0; transition: opacity 0.8s ease; }
+.tn-robot.chest-open .tn-internal-system { opacity: 1; }
+.tn-chest-armor-left { transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); transform-origin: 110px 300px; }
+.tn-chest-armor-right { transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); transform-origin: 290px 300px; }
+.tn-robot.chest-open .tn-chest-armor-left { transform: translateX(-30px) rotate(-10deg); }
+.tn-robot.chest-open .tn-chest-armor-right { transform: translateX(30px) rotate(10deg); }
+
+.tn-gears { transform-origin: center; opacity: 0; }
+.tn-robot.chest-open .tn-gears { opacity: 1; animation: tn-rotate 4s linear infinite; }
+#gear1 { transform-origin: 145px 350px; }
+#gear2 { transform-origin: 255px 350px; animation-direction: reverse; }
+@keyframes tn-rotate { to { transform: rotate(360deg); } }
+
+.tn-sparks { opacity: 0; }
+.tn-robot.chest-open .tn-sparks { animation: tn-spark 0.2s linear infinite 0.8s; }
+@keyframes tn-spark { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+
+/* Arms & Wave */
+.tn-right-arm { transform-origin: 290px 270px; transition: transform 0.4s ease; }
+.tn-left-arm { transform-origin: 110px 270px; transition: transform 0.4s ease; }
+.tn-robot.waving .tn-right-arm { animation: tn-wave 0.8s ease-in-out 2; }
+@keyframes tn-wave { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-30deg); } 75% { transform: rotate(30deg); } }
+
+/* Mouth / Voice */
+.tn-mouth { transform-origin: 200px 165px; }
+.tn-robot.speaking .tn-mouth { animation: tn-talk 0.2s linear infinite; }
+@keyframes tn-talk { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(0.4) translateY(2px); } }
+
+/* Workouts */
+.tn-robot.squat { animation: tn-squat 2s ease-in-out infinite; }
+@keyframes tn-squat { 0%, 100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(50px) scaleY(0.85); } }
+
+.tn-robot.pushup { animation: tn-pushup 2s ease-in-out infinite; }
+.tn-robot.pushup .tn-robot-svg { transform-origin: bottom center; }
+@keyframes tn-pushup { 0%, 100% { transform: rotate(90deg) translate(-380px, -100px); } 50% { transform: rotate(90deg) translate(-340px, -100px); } }
+
+.tn-robot.balance { animation: tn-balance 3s ease-in-out infinite; }
+@keyframes tn-balance { 0%, 100% { transform: rotate(0deg) translateY(0); } 30% { transform: rotate(-15deg) translateY(-20px); } 60% { transform: rotate(-15deg) translateY(-20px); } }
+
+/* Transform to Car */
+.tn-robot.transforming .tn-robot-svg { opacity: 0; transform: scale(0.5) translateY(100px); transition: all 1s ease-in-out; }
+.tn-robot.transforming .tn-car-svg { opacity: 1; transform: scale(1) translateY(0); }
+
+/* 360 Spin */
+.tn-robot.spinning { animation: tn-spin 3s linear infinite; transform-style: preserve-3d; }
+@keyframes tn-spin { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
+
+/* Floats & Base */
+@keyframes tn-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.tn-robot.ai-active .tn-pupil { fill: var(--tn-red) !important; animation: tn-ai-pulse 4s ease-in-out infinite; }
+@keyframes tn-ai-pulse { 50% { fill: var(--tn-blue) !important; } }
+
+@media (max-width: 768px) {
+    .tn-robot-stage { width: 300px; height: 600px; }
+    .tn-callout { width: 180px; padding: 10px; left: 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .tn-robot-float, .tn-shine, .tn-gears, .tn-sparks, .tn-robot.squat, .tn-robot.pushup, .tn-robot.spinning { animation: none !important; transition: none !important; }
+}
+
+
+/* WAQAS */
+</style>
+
+
+
+<style>
+
+    /********** Template CSS **********/
+:root {
+    --primary: #1363C6;
+    --secondary: #15ACE1;
+    --light: #F4F7FE;
+    --dark: #14183E;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Heading ***/
+h1,
+h2,
+h3,
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+h4,
+h5,
+h6,
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+
+/*** Navbar ***/
+.sticky-top {
+    top: -150px;
+    transition: .5s;
+}
+
+.navbar {
+    padding: 11px 0 !important;
+    height: 75px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 35px;
+    padding: 0;
+    color: rgba(255, 255, 255, .7);
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        padding: 0 15px;
+        background: var(--primary);
+    }
+
+    .navbar .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Hero Header ***/
+.hero-header {
+    margin-top: -75px;
+    background: url(../img/bg-hero.png) center center no-repeat;
+    background-size: cover;
+}
+
+.hero-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Section Title ***/
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background: var(--dark);
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    bottom: 0;
+    left: 50px;
+    background: var(--dark);
+}
+
+.section-title.text-center::before {
+    left: 50%;
+    margin-left: -25px;
+}
+
+.section-title.text-center::after {
+    left: 50%;
+    margin-left: 25px;
+}
+
+.section-title h6::before,
+.section-title h6::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 2px;
+    left: 0;
+    background: rgba(33, 66, 177, .5);
+}
+
+.section-title h6::after {
+    top: 5px;
+    left: 3px;
+}
+
+
+/*** About ***/
+.about-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-img::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/bg-about-img.png) top left no-repeat;
+    background-size: contain;
+}
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    padding: 45px 30px;
+    background: #FFFFFF;
+    transition: .5s;
+}
+
+.service-item:hover {
+    background: var(--primary);
+}
+
+.service-item .service-icon {
+    margin: 0 auto 20px auto;
+    width: 90px;
+    height: 90px;
+    color: var(--primary);
+    background: var(--light);
+    transition: .5s;
+}
+
+.service-item:hover .service-icon {
+    background: #FFFFFF;
+}
+
+.service-item h5,
+.service-item p {
+    transition: .5s;
+}
+
+.service-item:hover h5,
+.service-item:hover p {
+    color: #FFFFFF;
+}
+
+.service-item a.btn {
+    position: relative;
+    display: flex;
+    color: var(--primary);
+    transition: .5s;
+    z-index: 1;
+}
+
+.service-item:hover a.btn {
+    color: var(--primary);
+}
+
+.service-item a.btn::before {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    border-radius: 35px;
+    background: var(--light);
+    transition: .5s;
+    z-index: -1;
+}
+
+.service-item:hover a.btn::before {
+    width: 100%;
+    background: var(--light);
+}
+
+
+/*** Feature ***/
+.feature {
+    background: url(../img/bg-hero.png) center center no-repeat;
+    background-size: cover;
+}
+
+
+/*** Newsletter ***/
+.newsletter {
+    background: url(../img/bg-hero.png) center center no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 992px) {
+    .newsletter .container {
+        max-width: 100% !important;
+    }
+
+    .newsletter .newsletter-text  {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .newsletter .newsletter-text  {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .newsletter .newsletter-text  {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Case Study ***/
+.case-item img {
+    transition: .5s;
+}
+  
+.case-item:hover img {
+    transform: scale(1.2);
+}
+  
+.case-overlay {
+    position: absolute;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background: linear-gradient(rgba(20, 24, 62, 0), var(--dark));
+    z-index: 1;
+}
+
+.case-overlay small {
+    display: inline-block;
+    padding: 3px 15px;
+    color: #FFFFFF;
+    background: rgba(20, 24, 62, .7);
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+
+.case-overlay span.btn:hover {
+    color: var(--primary);
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+
+/*** FAQs ***/
+.accordion .accordion-item {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.accordion .accordion-button {
+    background: var(--light);
+    border-radius: 2px;
+}
+
+.accordion .accordion-button:not(.collapsed) {
+    color: #FFFFFF;
+    background: var(--primary);
+    box-shadow: none;
+}
+
+.accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion .accordion-body {
+    padding: 15px 0 0 0;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel {
+    position: relative;
+}
+
+.testimonial-carousel .owl-nav {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    top: calc(50% - 50px);
+    left: -21px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    margin: 5px 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: #FFFFFF;
+    border: 1px solid var(--primary);
+    border-radius: 40px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover,
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 35px;
+    margin-left: 3rem;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    border: 1px solid var(--primary);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    width: 30px;
+    background: var(--primary);
+}
+
+
+/*** Team ***/
+.team-item {
+    transition: .5s;
+    border: 1px solid transparent;
+    transition: .5s;
+}
+
+.team-item:hover {
+
+    border-color: var(--primary);
+}
+
+
+/*** Footer ***/
+.footer {
+    background: url(../img/footer.png) center center no-repeat;
+    background-size: contain;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.5);
+    border: 1px solid rgba(256, 256, 256, .1);
+    border-radius: 40px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+    color: rgba(255,255,255,.5);
+    font-weight: normal;
+    transition: .3s;
+}
+
+.footer .btn.btn-link:hover {
+    color: #FFFFFF;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: rgba(255,255,255,.5);
+}
+
+.footer .copyright a:hover {
+    color: #FFFFFF;
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+
+/* ToolNova AI: small visual upgrade while preserving the original template */
+.interactive-robot {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.interactive-robot > img {
+    position: relative;
+    z-index: 1;
+    transition: transform .35s ease, filter .35s ease;
+}
+.interactive-robot.robot-active > img {
+    animation: robotFloat 2.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 18px rgba(80, 160, 255, .28));
+}
+.robot-eye-hotspot,
+.robot-hand-hotspot {
+    position: absolute;
+    z-index: 3;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.robot-eye-hotspot {
+    width: 8%;
+    height: 8%;
+    min-width: 16px;
+    min-height: 16px;
+    background: transparent;
+    transition: background .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.robot-eye-hotspot.is-lit {
+    background: #ff3030;
+    box-shadow: 0 0 9px #ff3030, 0 0 20px rgba(255,48,48,.75);
+    transform: scale(1.12);
+}
+.robot-eye-hotspot.is-blue {
+    background: #269dff;
+    box-shadow: 0 0 9px #269dff, 0 0 20px rgba(38,157,255,.75);
+}
+.robot-eye-hotspot:hover {
+    transform: scale(1.16);
+}
+.robot-hand-hotspot {
+    width: 14%;
+    height: 18%;
+    background: transparent;
+}
+.interactive-robot.hand-wave .left-hand,
+.interactive-robot.hand-wave .right-hand {
+    animation: handWave .55s ease-in-out 2;
+}
+.robot-status {
+    letter-spacing: .2px;
+}
+@keyframes robotFloat {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(.5deg); }
+}
+@keyframes handWave {
+    0%,100% { transform: rotate(0deg) translateY(0); }
+    50% { transform: rotate(-8deg) translateY(-6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .interactive-robot > img,
+    .interactive-robot.hand-wave .left-hand,
+    .interactive-robot.hand-wave .right-hand {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* =========================================
+   HERO ROBOT EYE COLORS
+========================================= */
+
+.hero-robot .robot-eye-hotspot {
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.hero-robot .robot-eye-hotspot.active {
+    background: var(--eye-color);
+
+    box-shadow:
+        0 0 8px var(--eye-color),
+        0 0 18px var(--eye-color),
+        0 0 35px var(--eye-color),
+        0 0 55px var(--eye-color);
+
+    animation: eyeGlow 0.8s infinite alternate;
+}
+
+
+@keyframes eyeGlow {
+
+    from {
+        opacity: 0.65;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="text-white">Tool<span class="text-dark">.</span>Nova</h1>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">AI Tools</a>
+                        <a href="project.html" class="nav-item nav-link">Reviews</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
+                            <div class="dropdown-menu bg-light mt-2">
+                                <a href="feature.html" class="dropdown-item">AI Writing</a>
+                                <a href="team.html" class="dropdown-item">AI Image</a>
+                                <a href="faq.html" class="dropdown-item">AI Video</a>
+                                <a href="testimonial.html" class="dropdown-item">Productivity</a>
+                                <a href="404.html" class="dropdown-item">AI for Business</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
+                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">ToolNova AI</div>
+                    <h1 class="display-4 text-white mb-4 animated slideInRight">Discover the Best AI Tools for Work & Creativity</h1>
+                    <p class="text-white mb-4 animated slideInRight">Find useful AI tools, honest reviews, practical comparisons and simple guides to help you work smarter and create more.</p>
+                    <a href="service.html" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Explore AI Tools</a>
+                    <a href="project.html" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">View Reviews</a>
+                    <div class="robot-status text-white-50 mt-3 small" aria-live="polite">
+                        Move over the robot • Click its eyes to activate AI mode
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-end text-center text-lg-end">
+                    <div class="hero-robot interactive-robot" aria-label="Interactive AI robot">
+                        <img class="img-fluid" src="img/hero-img.png" alt="ToolNova AI robot">
+                        <div class="robot-eye-hotspot left-eye" aria-hidden="true"></div>
+                        <div class="robot-eye-hotspot right-eye" aria-hidden="true"></div>
+                        <div class="robot-hand-hotspot left-hand" aria-hidden="true"></div>
+                        <div class="robot-hand-hotspot right-hand" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(20, 24, 62, 0.7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn btn-square bg-white btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-light p-3"
+                            placeholder="Type search keyword">
+                        <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="about-img">
+                        <img class="img-fluid" src="img/about-img.jpg">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">About ToolNova AI</div>
+                    <h1 class="mb-4">Your Guide to the Best AI Tools & Software</h1>
+                    <p class="mb-4">Browse useful AI software by category and find tools for content, design, video, research and productivity.</p>
+                    <p class="mb-4">Our goal is simple: make AI easier to understand so you can choose the right tool without wasting time.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Practical Tool Reviews</h6>
+                            <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Easy AI Guides</h6>
+                        </div>
+                        <div class="col-sm-6">
+                            <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Tool Comparisons</h6>
+                            <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Updated Recommendations</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mt-4">
+                        <a class="btn btn-primary rounded-pill px-4 me-3" href="">Read More</a>
+                        <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid bg-light mt-5 py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">AI Tool Categories</div>
+                    <h1 class="mb-4">Explore AI Tools for Every Task</h1>
+                    <p class="mb-4">Browse useful AI software by category and find tools for content, design, video, research and productivity.</p>
+                    <a class="btn btn-primary rounded-pill px-4" href="">Read More</a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="row g-4">
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
+                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                                        <div class="service-icon btn-square">
+                                            <i class="fa fa-robot fa-2x"></i>
+                                        </div>
+                                        <h5 class="mb-3">AI Writing Tools</h5>
+                                        <p>Discover AI writing assistants for articles, emails, ideas, rewriting and everyday content creation.</p>
+                                        <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                                        <div class="service-icon btn-square">
+                                            <i class="fa fa-power-off fa-2x"></i>
+                                        </div>
+                                        <h5 class="mb-3">AI Image Tools</h5>
+                                        <p>Discover AI writing assistants for articles, emails, ideas, rewriting and everyday content creation.</p>
+                                        <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pt-md-4">
+                            <div class="row g-4">
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
+                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                                        <div class="service-icon btn-square">
+                                            <i class="fa fa-graduation-cap fa-2x"></i>
+                                        </div>
+                                        <h5 class="mb-3">AI Video Tools</h5>
+                                        <p>Discover AI writing assistants for articles, emails, ideas, rewriting and everyday content creation.</p>
+                                        <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                                    </div>
+                                </div>
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.7s">
+                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                                        <div class="service-icon btn-square">
+                                            <i class="fa fa-brain fa-2x"></i>
+                                        </div>
+                                        <h5 class="mb-3">AI Productivity Tools</h5>
+                                        <p>Discover AI writing assistants for articles, emails, ideas, rewriting and everyday content creation.</p>
+                                        <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-primary feature pt-5">
+        <div class="container pt-5">
+            <div class="row g-5">
+                <div class="col-lg-6 align-self-center mb-md-5 pb-md-5 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Why ToolNova AI</div>
+                    <h1 class="text-white mb-4">Find Better AI Tools Without the Guesswork</h1>
+                    <p class="text-light mb-4">Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed
+                        stet no labore lorem sit. Sanctus clita duo justo et tempor</p>
+                    <div class="d-flex align-items-center text-white mb-3">
+                        <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <span>Simple guides that explain what each AI tool actually does</span>
+                    </div>
+                    <div class="d-flex align-items-center text-white mb-3">
+                        <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <span>Simple guides that explain what each AI tool actually does</span>
+                    </div>
+                    <div class="d-flex align-items-center text-white mb-3">
+                        <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <span>Simple guides that explain what each AI tool actually does</span>
+                    </div>
+                    <div class="row g-4 pt-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex rounded p-3" style="background: rgba(256, 256, 256, 0.1);">
+                                <i class="fa fa-users fa-3x text-white"></i>
+                                <div class="ms-3">
+                                    <h2 class="text-white mb-0">100+</h2>
+                                    <p class="text-white mb-0">AI Tools Covered</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex rounded p-3" style="background: rgba(256, 256, 256, 0.1);">
+                                <i class="fa fa-check fa-3x text-white"></i>
+                                <div class="ms-3">
+                                    <h2 class="text-white mb-0">100+</h2>
+                                    <p class="text-white mb-0">Useful Guides</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 align-self-end text-center text-md-end wow fadeIn" data-wow-delay="0.5s">
+                    <div class="interactive-robot feature-robot" aria-label="Interactive AI assistant robot">
+                        <img class="img-fluid" src="img/feature.png" alt="AI assistant robot">
+                        <div class="robot-eye-hotspot left-eye" aria-hidden="true"></div>
+                        <div class="robot-eye-hotspot right-eye" aria-hidden="true"></div>
+                        <div class="robot-hand-hotspot left-hand" aria-hidden="true"></div>
+                        <div class="robot-hand-hotspot right-hand" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- Case Start -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Featured Guides</div>
+                <h1 class="mb-4">Explore Our Latest AI Tool Guides</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="case-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/project-1.jpg" alt="">
+                        <a class="case-overlay text-decoration-none" href="">
+                            <small>AI Writing</small>
+                            <h5 class="lh-base text-white mb-3">Best AI Writing Tools for Content Creation
+                            </h5>
+                            <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="case-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/project-2.jpg" alt="">
+                        <a class="case-overlay text-decoration-none" href="">
+                            <small>AI Image</small>
+                            <h5 class="lh-base text-white mb-3">Best AI Writing Tools for Content Creation
+                            </h5>
+                            <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="case-item position-relative overflow-hidden rounded mb-2">
+                        <img class="img-fluid" src="img/project-3.jpg" alt="">
+                        <a class="case-overlay text-decoration-none" href="">
+                            <small>AI Productivity</small>
+                            <h5 class="lh-base text-white mb-3">Best AI Writing Tools for Content Creation
+                            </h5>
+                            <span class="btn btn-square btn-primary"><i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Case End -->
+
+
+
+    <!-- AI Tools Directory Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 650px;">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">AI Tools Directory</div>
+                <h1 class="mb-4">Find the Right AI Tool Faster</h1>
+                <p class="mb-4">Browse popular AI categories, compare tools and discover practical software for your everyday work.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-pen fa-2x"></i></div>
+                        <h5 class="mb-3">AI Writing</h5>
+                        <p>Writing assistants, copywriting, rewriting and content tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-image fa-2x"></i></div>
+                        <h5 class="mb-3">AI Image</h5>
+                        <p>Image generators, editors, design assistants and creative tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-video fa-2x"></i></div>
+                        <h5 class="mb-3">AI Video</h5>
+                        <p>Video generation, editing, avatars, subtitles and creator tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-bolt fa-2x"></i></div>
+                        <h5 class="mb-3">Productivity</h5>
+                        <p>Research, automation, meetings, notes and workflow tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- FAHAD -->
+
+<div class="tn-stage-wrapper">
+        
+        <!-- UI Control Deck -->
+        <div class="tn-ui-deck">
+            <button id="aiToggleBtn" class="tn-ui-btn" aria-pressed="false">AI Mode</button>
+            <button id="voiceBtn" class="tn-ui-btn">Speak</button>
+            <button id="coreBtn" class="tn-ui-btn">Open Core</button>
+            <button id="squatBtn" class="tn-ui-btn">Squat</button>
+            <button id="pushupBtn" class="tn-ui-btn">Push-Up</button>
+            <button id="transformBtn" class="tn-ui-btn">Transform</button>
+            <button id="spinBtn" class="tn-ui-btn">360° Spin</button>
+            <button id="autoBtn" class="tn-ui-btn">Auto Demo</button>
+        </div>
+
+        <!-- Feature Callout -->
+        <div id="featureCallout" class="tn-callout" aria-hidden="true">
+            <div class="tn-callout-arrow"></div>
+            <div class="tn-callout-content">
+                <h4 id="featureTitle">Feature</h4>
+                <p id="featureDesc">Description</p>
+            </div>
+        </div>
+
+        <!-- Robot Stage -->
+        <div class="tn-robot-stage" id="robotStage">
+            <div class="tn-floor" aria-hidden="true"></div>
+            <div class="tn-aura" aria-hidden="true"></div>
+            
+            <div class="tn-robot-float">
+                <div class="tn-robot-hover" id="robotHover">
+                    <div class="tn-robot" id="robotMain" role="img" aria-label="ToolNova AI assistant robot. Move your mouse to make it look at you, hover its eyes to glow, or click its chest core to open the internal system.">
+                        
+                        <!-- HUMANOID ROBOT SVG -->
+                        <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" class="tn-robot-svg" id="robotSvg" aria-hidden="true">
+                            <defs>
+                                <!-- 3D Premium Material Gradients -->
+                                <linearGradient id="tnMatBlack" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#2d3548" />
+                                    <stop offset="50%" stop-color="#0f172a" />
+                                    <stop offset="100%" stop-color="#020617" />
+                                </linearGradient>
+                                <linearGradient id="tnMatBlackInv" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#2d3548" />
+                                    <stop offset="50%" stop-color="#0f172a" />
+                                    <stop offset="100%" stop-color="#020617" />
+                                </linearGradient>
+                                <linearGradient id="tnMatTitanium" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#94a3b8" />
+                                    <stop offset="40%" stop-color="#64748b" />
+                                    <stop offset="100%" stop-color="#334155" />
+                                </linearGradient>
+                                <linearGradient id="tnMatGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fde047" />
+                                    <stop offset="50%" stop-color="#ca8a04" />
+                                    <stop offset="100%" stop-color="#713f12" />
+                                </linearGradient>
+                                <linearGradient id="tnMatBlueMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3b4f73" />
+                                    <stop offset="50%" stop-color="#1e293b" />
+                                    <stop offset="100%" stop-color="#0f172a" />
+                                </linearGradient>
+                                <radialGradient id="tnEyeGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#00eaff" />
+                                    <stop offset="60%" stop-color="#4d79ff" />
+                                    <stop offset="100%" stop-color="#14183e" />
+                                </radialGradient>
+                                <linearGradient id="tnHairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#1e293b" />
+                                    <stop offset="50%" stop-color="#020617" />
+                                    <stop offset="100%" stop-color="#000000" />
+                                </linearGradient>
+                                
+                                <!-- 3D Depth & Glow Filters -->
+                                <filter id="tnGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <filter id="tnAO" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#000000" flood-opacity="0.8"/>
+                                </filter>
+                                <filter id="tnCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
+                                    <feGaussianBlur stdDeviation="10" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                <filter id="tnSpark" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="1.5" result="blur"/>
+                                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                                </filter>
+                                
+                                <!-- Eye Clip Paths -->
+                                <clipPath id="leftEyeClip"><circle cx="175" cy="125" r="10"/></clipPath>
+                                <clipPath id="rightEyeClip"><circle cx="225" cy="125" r="10"/></clipPath>
+                            </defs>
+
+                            <!-- LEGS & FEET -->
+                            <g class="tn-legs" id="legsGroup" filter="url(#tnAO)">
+                                <!-- Left Leg -->
+                                <path d="M160,450 L160,600 L155,720 L175,720 L185,600 L185,450 Z" fill="url(#tnMatBlack)"/>
+                                <path d="M160,450 L170,450 L170,720 L155,720 Z" fill="url(#tnMatBlackInv)" opacity="0.8"/>
+                                <path d="M165,450 L175,450 L175,720 L165,720 Z" fill="url(#tnMatTitanium)" opacity="0.3"/>
+                                <circle cx="175" cy="550" r="16" fill="url(#tnMatTitanium)" stroke="#0f172a" stroke-width="1"/>
+                                <circle cx="175" cy="550" r="12" fill="none" stroke="url(#tnMatGold)" stroke-width="2"/>
+                                <circle cx="175" cy="550" r="4" fill="var(--tn-purple)" filter="url(#tnGlow)"/>
+                                <path d="M145,720 L195,720 L195,740 L145,740 Z" fill="url(#tnMatBlack)"/>
+                                <path d="M145,720 L195,720 L195,730 L145,730 Z" fill="url(#tnMatTitanium)"/>
+                                <circle cx="180" cy="725" r="2" fill="var(--tn-cyan)" filter="url(#tnGlow)"/>
+
+                                <!-- Right Leg -->
+                                <path d="M215,450 L215,600 L225,720 L245,720 L240,600 L240,450 Z" fill="url(#tnMatBlackInv)"/>
+                                <path d="M240,450 L230,450 L230,720 L245,720 Z" fill="url(#tnMatBlack)" opacity="0.8"/>
+                                <path d="M225,450 L235,450 L235,720 L225,720 Z" fill="url(#tnMatTitanium)" opacity="0.3"/>
+                                <circle cx="225" cy="550" r="16" fill="url(#tnMatTitanium)" stroke="#0f172a" stroke-width="1"/>
+                                <circle cx="225" cy="550" r="12" fill="none" stroke="url(#tnMatGold)" stroke-width="2"/>
+                                <circle cx="225" cy="550" r="4" fill="var(--tn-purple)" filter="url(#tnGlow)"/>
+                                <path d="M205,720 L255,720 L255,740 L205,740 Z" fill="url(#tnMatBlack)"/>
+                                <path d="M205,720 L255,720 L255,730 L205,730 Z" fill="url(#tnMatTitanium)"/>
+                                <circle cx="220" cy="725" r="2" fill="var(--tn-cyan)" filter="url(#tnGlow)"/>
+                            </g>
+
+                            <!-- HIPS / WAIST -->
+                            <g class="tn-hips" filter="url(#tnAO)">
+                                <path d="M140,430 L260,430 L270,460 L130,460 Z" fill="url(#tnMatBlueMetal)"/>
+                                <path d="M130,430 L270,430 L270,445 L130,445 Z" fill="url(#tnMatTitanium)"/>
+                                <path d="M190,430 L210,430 L210,460 L190,460 Z" fill="url(#tnMatGold)" opacity="0.6"/>
+                                <circle cx="200" cy="445" r="8" fill="var(--tn-dark)" stroke="var(--tn-cyan)" stroke-width="1"/>
+                                <circle cx="200" cy="445" r="4" fill="var(--tn-cyan)" filter="url(#tnGlow)"/>
+                            </g>
+
+                            <!-- TORSO / CHEST -->
+                            <g class="tn-torso" filter="url(#tnAO)">
+                                <!-- Internal Mechanical Chamber -->
+                                <g class="tn-internal-system" id="internalSystem">
+                                    <path d="M130,220 L270,220 L280,440 L120,440 Z" fill="#020617" stroke="#0f172a" stroke-width="2"/>
+                                    <rect x="170" y="290" width="60" height="80" rx="10" fill="url(#tnMatBlack)" stroke="url(#tnMatGold)" stroke-width="2"/>
+                                    <circle cx="200" cy="330" r="15" fill="var(--tn-cyan)" opacity="0.2" filter="url(#tnCoreGlow)" class="tn-internal-core"/>
+                                    <path d="M180,300 Q200,310 180,320 Q200,330 180,340 Q200,350 180,360" fill="none" stroke="url(#tnMatTitanium)" stroke-width="3"/>
+                                    <path d="M220,300 Q200,310 220,320 Q200,330 220,340 Q200,350 220,360" fill="none" stroke="url(#tnMatTitanium)" stroke-width="3"/>
+                                    <g class="tn-gears" id="gear1">
+                                        <circle cx="145" cy="350" r="15" fill="url(#tnMatTitanium)" stroke="#0f172a" stroke-width="1"/>
+                                        <path d="M145,335 L145,365 M130,350 L160,350 M135,335 L155,365 M135,365 L155,335" stroke="#0f172a" stroke-width="2"/>
+                                    </g>
+                                    <g class="tn-gears" id="gear2">
+                                        <circle cx="255" cy="350" r="15" fill="url(#tnMatTitanium)" stroke="#0f172a" stroke-width="1"/>
+                                        <path d="M255,335 L255,365 M240,350 L270,350 M245,335 L265,365 M245,365 L265,335" stroke="#0f172a" stroke-width="2"/>
+                                    </g>
+                                    <path d="M145,365 Q160,400 170,380 M255,365 Q240,400 230,380" fill="none" stroke="url(#tnMatBlack)" stroke-width="8" stroke-linecap="round"/>
+                                    <path d="M145,365 Q160,400 170,380 M255,365 Q240,400 230,380" fill="none" stroke="var(--tn-blue)" stroke-width="2" stroke-linecap="round" filter="url(#tnGlow)"/>
+                                    <g class="tn-sparks" id="spark1">
+                                        <path d="M145,365 L155,370 L150,375 L160,380" fill="none" stroke="var(--tn-cyan)" stroke-width="2" filter="url(#tnSpark)"/>
+                                    </g>
+                                    <g class="tn-sparks" id="spark2">
+                                        <path d="M255,365 L245,370 L250,375 L240,380" fill="none" stroke="var(--tn-pink)" stroke-width="2" filter="url(#tnSpark)"/>
+                                    </g>
+                                </g>
+
+                                <!-- Chest Armor Plates -->
+                                <g class="tn-chest-armor-left" id="chestArmorLeft">
+                                    <path d="M130,220 L200,220 L200,440 L120,440 L110,300 Z" fill="url(#tnMatBlack)" stroke="#0f172a" stroke-width="1.5"/>
+                                    <path d="M130,220 L200,220 L200,230 L130,230 L115,300 Z" fill="url(#tnMatTitanium)" opacity="0.4"/>
+                                    <path d="M130,250 L200,250 M120,280 L200,280 M115,310 L200,310" stroke="#0f172a" stroke-width="2"/>
+                                    <path d="M130,252 L200,252 M120,282 L200,282 M115,312 L200,312" stroke="var(--tn-cyan)" stroke-width="0.5" opacity="0.3"/>
+                                </g>
+                                <g class="tn-chest-armor-right" id="chestArmorRight">
+                                    <path d="M200,220 L270,220 L290,300 L280,440 L200,440 Z" fill="url(#tnMatBlackInv)" stroke="#0f172a" stroke-width="1.5"/>
+                                    <path d="M200,220 L270,220 L285,300 L200,230 Z" fill="url(#tnMatTitanium)" opacity="0.4"/>
+                                    <path d="M200,250 L270,250 M200,280 L280,280 M200,310 L285,310" stroke="#0f172a" stroke-width="2"/>
+                                    <path d="M200,252 L270,252 M200,282 L280,282 M200,312 L285,312" stroke="var(--tn-cyan)" stroke-width="0.5" opacity="0.3"/>
+                                </g>
+
+                                <!-- AI Core Housing & Core Button -->
+                                <g class="tn-ai-core-btn" id="aiCoreBtn" role="button" tabindex="0" aria-label="Open AI Core">
+                                    <circle cx="200" cy="320" r="35" fill="url(#tnMatBlack)" stroke="url(#tnMatGold)" stroke-width="3" filter="url(#tnAO)"/>
+                                    <circle cx="200" cy="320" r="28" fill="#020617" stroke="url(#tnMatTitanium)" stroke-width="2"/>
+                                    <g class="tn-core-ring" id="coreRing">
+                                        <path d="M200,295 L210,320 L200,345 L190,320 Z" fill="url(#tnMatGold)" opacity="0.8"/>
+                                        <path d="M175,320 L200,310 L225,320 L200,330 Z" fill="url(#tnMatGold)" opacity="0.8"/>
+                                    </g>
+                                    <circle cx="200" cy="320" r="18" fill="var(--tn-cyan)" opacity="0.3" filter="url(#tnCoreGlow)" class="tn-core"/>
+                                    <circle cx="200" cy="320" r="10" fill="var(--tn-cyan)" class="tn-core-inner" filter="url(#tnCoreGlow)"/>
+                                    <circle cx="194" cy="314" r="3" fill="#ffffff" opacity="0.8" class="tn-core-shine"/>
+                                </g>
+                            </g>
+
+                            <!-- LEFT ARM -->
+                            <g class="tn-left-arm" id="leftArmGroup" filter="url(#tnAO)">
+                                <circle cx="110" cy="270" r="22" fill="url(#tnMatBlueMetal)" stroke="#0f172a" stroke-width="1"/>
+                                <circle cx="110" cy="270" r="14" fill="url(#tnMatBlack)" stroke="url(#tnMatGold)" stroke-width="1.5"/>
+                                <circle cx="110" cy="270" r="6" fill="var(--tn-cyan)" filter="url(#tnGlow)"/>
+                                <path d="M95,285 L75,350 L95,365 L115,300 Z" fill="url(#tnMatBlack)"/>
+                                <path d="M95,285 L115,300 L95,365 L85,355 Z" fill="url(#tnMatBlackInv)" opacity="0.7"/>
+                                <path d="M85,360 L105,360" stroke="url(#tnMatGold)" stroke-width="3"/>
+                                <circle cx="85" cy="360" r="14" fill="url(#tnMatTitanium)" stroke="#0f172a" stroke-width="1"/>
+                                <path d="M75,370 L65,430 L85,445 L95,380 Z" fill="url(#tnMatBlueMetal)"/>
+                                <circle cx="80" cy="445" r="10" fill="url(#tnMatTitanium)"/>
+                                <g class="tn-hand tn-left-hand" id="leftHand" role="button" tabindex="0" aria-label="Wave left hand">
+                                    <path d="M65,450 L95,450 L100,490 L60,490 Z" fill="url(#tnMatBlack)"/>
+                                    <path d="M65,450 L95,450 L90,460 L70,460 Z" fill="url(#tnMatTitanium)" opacity="0.5"/>
+                                    <path d="M63,490 L55,525 L62,530 L70,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M73,490 L72,530 L80,530 L82,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M83,490 L87,525 L95,525 L92,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M93,490 L101,515 L108,515 L100,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M63,492 L55,527 M73,492 L72,527 M83,492 L87,527 M93,492 L101,517" stroke="#cbd5e1" stroke-width="1" opacity="0.5"/>
+                                    <path d="M58,525 L60,527 M76,527 L78,525 M89,525 L91,527 M101,515 L103,513" stroke="var(--tn-cyan)" stroke-width="1.5" filter="url(#tnGlow)"/>
+                                </g>
+                            </g>
+
+                            <!-- RIGHT ARM -->
+                            <g class="tn-right-arm" id="rightArmGroup" filter="url(#tnAO)">
+                                <circle cx="290" cy="270" r="22" fill="url(#tnMatBlueMetal)" stroke="#0f172a" stroke-width="1"/>
+                                <circle cx="290" cy="270" r="14" fill="url(#tnMatBlack)" stroke="url(#tnMatGold)" stroke-width="1.5"/>
+                                <circle cx="290" cy="270" r="6" fill="var(--tn-cyan)" filter="url(#tnGlow)"/>
+                                <path d="M305,285 L325,350 L305,365 L285,300 Z" fill="url(#tnMatBlack)"/>
+                                <path d="M305,285 L285,300 L305,365 L315,355 Z" fill="url(#tnMatBlackInv)" opacity="0.7"/>
+                                <path d="M295,360 L315,360" stroke="url(#tnMatGold)" stroke-width="3"/>
+                                <circle cx="315" cy="360" r="14" fill="url(#tnMatTitanium)" stroke="#0f172a" stroke-width="1"/>
+                                <path d="M325,370 L335,430 L315,445 L305,380 Z" fill="url(#tnMatBlueMetal)"/>
+                                <circle cx="320" cy="445" r="10" fill="url(#tnMatTitanium)"/>
+                                <g class="tn-hand tn-right-hand" id="rightHand" role="button" tabindex="0" aria-label="Wave right hand">
+                                    <path d="M300,450 L335,450 L340,490 L295,490 Z" fill="url(#tnMatBlack)"/>
+                                    <path d="M300,450 L335,450 L330,460 L305,460 Z" fill="url(#tnMatTitanium)" opacity="0.5"/>
+                                    <path d="M298,490 L290,525 L297,530 L305,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M308,490 L307,530 L315,530 L317,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M318,490 L322,525 L330,525 L327,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M328,490 L336,515 L343,515 L335,490" fill="url(#tnMatTitanium)"/>
+                                    <path d="M298,492 L290,527 M308,492 L307,527 M318,492 L322,527 M328,492 L336,517" stroke="#cbd5e1" stroke-width="1" opacity="0.5"/>
+                                    <path d="M293,525 L295,527 M311,527 L313,525 M324,525 L326,527 M336,515 L338,513" stroke="var(--tn-cyan)" stroke-width="1.5" filter="url(#tnGlow)"/>
+                                </g>
+                            </g>
+
+                            <!-- HEAD -->
+                            <g class="tn-head-group" id="robotHead" filter="url(#tnAO)">
+                                <g class="tn-neck">
+                                    <path d="M180,180 L180,220 L220,220 L220,180 Z" fill="url(#tnMatBlack)"/>
+                                    <path d="M180,180 L220,180 L220,190 L180,190 Z" fill="url(#tnMatTitanium)"/>
+                                    <path d="M185,195 L215,195 M185,205 L215,205 M185,215 L215,215" stroke="var(--tn-purple)" stroke-width="1.5" filter="url(#tnGlow)"/>
+                                    <path d="M180,180 L180,220 M220,180 L220,220" stroke="url(#tnMatGold)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M180,180 L180,220 M220,180 L220,220" stroke="var(--tn-cyan)" stroke-width="1" stroke-linecap="round" filter="url(#tnGlow)"/>
+                                </g>
+
+                                <g class="tn-ears">
+                                    <path d="M140,110 C120,110 115,135 130,155 C135,165 140,165 145,160 L145,110 Z" fill="url(#tnMatBlack)"/>
+                                    <path d="M140,115 C125,115 120,135 135,150 L135,115 Z" fill="url(#tnMatBlueMetal)" opacity="0.6"/>
+                                    <circle cx="135" cy="130" r="3" fill="var(--tn-cyan)" filter="url(#tnGlow)"/>
+                                    <path d="M132,140 L138,145" stroke="url(#tnMatGold)" stroke-width="2"/>
+                                    
+                                    <path d="M260,110 C280,110 285,135 270,155 C265,165 260,165 255,160 L255,110 Z" fill="url(#tnMatBlackInv)"/>
+                                    <path d="M260,115 C275,115 280,135 265,150 L265,115 Z" fill="url(#tnMatBlueMetal)" opacity="0.6"/>
+                                    <circle cx="265" cy="130" r="3" fill="var(--tn-cyan)" filter="url(#tnGlow)"/>
+                                    <path d="M262,140 L268,145" stroke="url(#tnMatGold)" stroke-width="2"/>
+                                </g>
+
+                                <path d="M150,70 Q150,40 200,40 Q250,40 250,70 L250,150 Q200,180 150,150 Z" fill="url(#tnMatBlack)"/>
+                                <path d="M150,70 Q150,40 200,40 Q250,40 250,70 L250,90 Q200,100 150,90 Z" fill="url(#tnMatTitanium)" opacity="0.2"/>
+                                <path d="M160,140 Q160,170 200,175 Q240,170 240,150 Q200,160 160,140 Z" fill="url(#tnMatBlackInv)" opacity="0.8"/>
+                                
+                                <path d="M170,65 L190,65 L190,70 L170,70 Z M210,65 L230,65 L230,70 L210,70 Z" fill="#0f172a" opacity="0.6"/>
+                                <path d="M195,60 L205,60 M185,75 L215,75" stroke="var(--tn-cyan)" stroke-width="0.8" opacity="0.6" filter="url(#tnGlow)"/>
+
+                                <g class="tn-hair">
+                                    <path d="M145,90 Q135,25 200,25 Q265,25 255,90 Q250,50 200,40 Q150,50 145,90 Z" fill="url(#tnHairGrad)"/>
+                                    <path d="M155,80 Q145,35 200,35 Q255,35 245,80 Q240,55 200,50 Q160,55 155,80 Z" fill="url(#tnHairGrad)" opacity="0.8"/>
+                                    <path d="M160,70 Q170,45 190,55 M210,55 Q230,45 240,70" stroke="var(--tn-blue)" stroke-width="1" opacity="0.5" fill="none"/>
+                                    <path d="M165,60 Q175,40 195,50" stroke="url(#tnMatGold)" stroke-width="0.5" opacity="0.4" fill="none"/>
+                                </g>
+
+                                <path d="M160,105 Q175,95 190,105 M210,105 Q225,95 240,105" fill="none" stroke="url(#tnHairGrad)" stroke-width="5" stroke-linecap="round"/>
+                                <path d="M160,105 Q175,95 190,105 M210,105 Q225,95 240,105" fill="none" stroke="var(--tn-blue)" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+
+                                <g class="tn-eyes-group" id="eyesGroup">
+                                    <g class="tn-left-eye" tabindex="0" role="button" aria-label="Robot left eye">
+                                        <circle cx="175" cy="125" r="14" fill="url(#tnMatBlack)" stroke="#0f172a" stroke-width="2"/>
+                                        <circle cx="175" cy="125" r="12" fill="#020617"/>
+                                        <g class="tn-pupil" id="leftPupil">
+                                            <circle cx="175" cy="125" r="10" fill="url(#tnEyeGlow)" filter="url(#tnGlow)"/>
+                                            <circle cx="175" cy="125" r="4" fill="#020617"/>
+                                            <circle cx="173" cy="123" r="1.5" fill="#ffffff" opacity="0.9"/>
+                                        </g>
+                                        <g clip-path="url(#leftEyeClip)">
+                                            <ellipse cx="175" cy="125" rx="4" ry="8" fill="#ffffff" class="tn-shine" opacity="0"/>
+                                        </g>
+                                        <circle cx="175" cy="125" r="14" fill="none" stroke="var(--tn-cyan)" stroke-width="1" opacity="0.5"/>
+                                    </g>
+                                    <g class="tn-right-eye" tabindex="0" role="button" aria-label="Robot right eye">
+                                        <circle cx="225" cy="125" r="14" fill="url(#tnMatBlack)" stroke="#0f172a" stroke-width="2"/>
+                                        <circle cx="225" cy="125" r="12" fill="#020617"/>
+                                        <g class="tn-pupil" id="rightPupil">
+                                            <circle cx="225" cy="125" r="10" fill="url(#tnEyeGlow)" filter="url(#tnGlow)"/>
+                                            <circle cx="225" cy="125" r="4" fill="#020617"/>
+                                            <circle cx="223" cy="123" r="1.5" fill="#ffffff" opacity="0.9"/>
+                                        </g>
+                                        <g clip-path="url(#rightEyeClip)">
+                                            <ellipse cx="225" cy="125" rx="4" ry="8" fill="#ffffff" class="tn-shine" opacity="0"/>
+                                        </g>
+                                        <circle cx="225" cy="125" r="14" fill="none" stroke="var(--tn-cyan)" stroke-width="1" opacity="0.5"/>
+                                    </g>
+                                </g>
+
+                                <g class="tn-nose">
+                                    <path d="M195,135 L195,155 L205,155 L205,135 Z" fill="url(#tnMatTitanium)"/>
+                                    <path d="M195,135 L200,135 L200,155 L195,155 Z" fill="#0f172a" opacity="0.4"/>
+                                    <path d="M188,155 Q200,170 212,155 L205,150 L195,150 Z" fill="url(#tnMatTitanium)"/>
+                                    <path d="M188,155 Q200,170 212,155 L205,150 L195,150 Z" fill="url(#tnMatBlackInv)" opacity="0.5"/>
+                                    <ellipse cx="193" cy="153" rx="2" ry="1.5" fill="#020617"/>
+                                    <ellipse cx="207" cy="153" rx="2" ry="1.5" fill="#020617"/>
+                                    <path d="M195,155 L185,165 M205,155 L215,165" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+                                    <path d="M195,155 L185,165 M205,155 L215,165" stroke="url(#tnMatTitanium)" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M195,155 L185,165 M205,155 L215,165" stroke="var(--tn-cyan)" stroke-width="1" stroke-linecap="round" filter="url(#tnGlow)"/>
+                                </g>
+
+                                <g class="tn-mouth" id="robotMouth">
+                                    <path d="M180,165 Q200,175 220,165" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+                                    <path d="M180,165 Q200,175 220,165" fill="none" stroke="url(#tnMatBlack)" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M185,167 Q200,172 215,167" fill="none" stroke="var(--tn-purple)" stroke-width="0.8" opacity="0.6" filter="url(#tnGlow)"/>
+                                </g>
+
+                                <path d="M160,150 Q160,170 200,175 Q240,170 240,150" fill="none" stroke="url(#tnMatTitanium)" stroke-width="2" opacity="0.7"/>
+
+                                <g class="tn-beard">
+                                    <path d="M155,140 Q155,175 200,185 Q245,175 245,140 Q240,160 200,165 Q160,160 155,140 Z" fill="url(#tnHairGrad)"/>
+                                    <path d="M160,150 Q165,175 200,180 Q235,175 240,150" fill="url(#tnHairGrad)" opacity="0.8"/>
+                                    <path d="M170,145 L175,165 M185,150 L190,175 M210,150 L205,175 M230,145 L225,165" stroke="#0f172a" stroke-width="1.5" opacity="0.6"/>
+                                    <path d="M170,145 L175,165 M185,150 L190,175 M210,150 L205,175 M230,145 L225,165" stroke="var(--tn-blue)" stroke-width="0.5" opacity="0.3"/>
+                                </g>
+                            </g>
+                        </svg>
+
+                        <!-- CAR SVG (For Transformation) -->
+                        <svg viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg" class="tn-car-svg" id="carSvg" aria-hidden="true">
+                            <path d="M50,500 Q50,450 100,440 L300,440 Q350,450 350,500 L350,600 Q350,650 300,650 L100,650 Q50,650 50,600 Z" fill="url(#tnMatBlack)" stroke="url(#tnMatGold)" stroke-width="2"/>
+                            <path d="M120,440 L280,440 L260,380 L140,380 Z" fill="url(#tnMatBlueMetal)" stroke="url(#tnMatTitanium)" stroke-width="2"/>
+                            <circle cx="200" cy="550" r="40" fill="url(#tnMatBlack)" stroke="url(#tnMatGold)" stroke-width="2"/>
+                            <circle cx="200" cy="550" r="25" fill="var(--tn-cyan)" opacity="0.3" filter="url(#tnCoreGlow)"/>
+                            <circle cx="200" cy="550" r="15" fill="var(--tn-cyan)" filter="url(#tnCoreGlow)"/>
+                            <circle cx="100" cy="660" r="30" fill="#0f172a" stroke="url(#tnMatTitanium)" stroke-width="4"/>
+                            <circle cx="300" cy="660" r="30" fill="#0f172a" stroke="url(#tnMatTitanium)" stroke-width="4"/>
+                            <path d="M60,490 L90,480 M340,490 L310,480" stroke="var(--tn-cyan)" stroke-width="3" filter="url(#tnGlow)"/>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- WAQAS -->
+
+
+
+
+
+
+
+    <!-- AI Tools Directory End -->
+
+    <!-- FAQs Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">AI Tool FAQs</div>
+                <h1 class="mb-4">Frequently Asked Questions About AI Tools</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="accordion" id="accordionFAQ1">
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.1s">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    What are AI tools?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How do I choose the best AI tool?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.3s">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Are AI tools free or paid?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.4s">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    Which AI tools are best for beginners?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionFAQ1">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="accordion" id="accordionFAQ2">
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.5s">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    How often are AI tool reviews updated?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.6s">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    Can I use AI tools for business?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.7s">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    How often are AI tool reviews updated?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeIn" data-wow-delay="0.8s">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    Can I use AI tools for business?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                                data-bs-parent="#accordionFAQ2">
+                                <div class="accordion-body">
+                                    Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Tools Directory Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 650px;">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">AI Tools Directory</div>
+                <h1 class="mb-4">Find the Right AI Tool Faster</h1>
+                <p class="mb-4">Browse popular AI categories, compare tools and discover practical software for your everyday work.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-pen fa-2x"></i></div>
+                        <h5 class="mb-3">AI Writing</h5>
+                        <p>Writing assistants, copywriting, rewriting and content tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-image fa-2x"></i></div>
+                        <h5 class="mb-3">AI Image</h5>
+                        <p>Image generators, editors, design assistants and creative tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-video fa-2x"></i></div>
+                        <h5 class="mb-3">AI Video</h5>
+                        <p>Video generation, editing, avatars, subtitles and creator tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
+                        <div class="service-icon btn-square"><i class="fa fa-bolt fa-2x"></i></div>
+                        <h5 class="mb-3">Productivity</h5>
+                        <p>Research, automation, meetings, notes and workflow tools.</p>
+                        <a class="btn px-3 mt-auto mx-auto" href="service.html">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- AI Tools Directory End -->
+
+    <!-- FAQs Start -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">About Our Team</div>
+                    <h1 class="mb-4">People Behind ToolNova AI</h1>
+                    <p class="mb-4">Browse useful AI software by category and find tools for content, design, video, research and productivity.</p>
+                    <a class="btn btn-primary rounded-pill px-4" href="">Read More</a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="row g-4">
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
+                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
+                                        <img class="img-fluid rounded-circle p-4" src="img/team-1.jpg" alt="">
+                                        <h5 class="mb-0">Alex Morgan</h5>
+                                        <small>Founder & CEO</small>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
+                                        <img class="img-fluid rounded-circle p-4" src="img/team-2.jpg" alt="">
+                                        <h5 class="mb-0">Jordan Lee</h5>
+                                        <small>Executive Manager</small>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pt-md-4">
+                            <div class="row g-4">
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
+                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
+                                        <img class="img-fluid rounded-circle p-4" src="img/team-3.jpg" alt="">
+                                        <h5 class="mb-0">Taylor Smith</h5>
+                                        <small>Co Founder</small>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.7s">
+                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
+                                        <img class="img-fluid rounded-circle p-4" src="img/team-4.jpg" alt="">
+                                        <h5 class="mb-0">Chris Parker</h5>
+                                        <small>Project Manager</small>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-square btn-primary m-1" href=""><i
+                                                    class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Reader Feedback</div>
+                    <h1 class="mb-4">What Our Readers Say</h1>
+                    <p class="mb-4">Browse useful AI software by category and find tools for content, design, video, research and productivity.</p>
+                    <a class="btn btn-primary rounded-pill px-4" href="">Read More</a>
+                </div>
+                <div class="col-lg-7 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="owl-carousel testimonial-carousel border-start border-primary">
+                        <div class="testimonial-item ps-5">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p class="fs-4">Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
+                                    style="width: 60px; height: 60px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1">Early Reader</h5>
+                                    <span>AI User</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item ps-5">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p class="fs-4">Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
+                                    style="width: 60px; height: 60px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1">Early Reader</h5>
+                                    <span>AI User</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item ps-5">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p class="fs-4">Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
+                                    style="width: 60px; height: 60px;">
+                                <div class="ps-3">
+                                    <h5 class="mb-1">Early Reader</h5>
+                                    <span>AI User</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-primary newsletter py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <div class="interactive-robot newsletter-robot" aria-label="Interactive newsletter robot">
+                        <img class="img-fluid" src="img/newsletter.png" alt="AI newsletter robot">
+                        <div class="robot-eye-hotspot left-eye" aria-hidden="true"></div>
+                        <div class="robot-hand-hotspot left-hand" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">AI Weekly</div>
+                    <h1 class="text-white mb-4">Get the Latest AI Tools & Guides</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text"
+                            placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
+                                class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Useful AI updates and new tool guides, delivered occasionally.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <h1 class="text-white">Tool<span class="text-primary">.</span>Nova</h1>
+                    </a>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
+                        clita duo justo et tempor</p>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Online AI Tools Directory</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>Contact us by email</p>
+                    <p><i class="fa fa-envelope me-3"></i>hello@toolnova.ai</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Career</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">AI Categories</h5>
+                    <a class="btn btn-link" href="">AI Writing Tools</a>
+                    <a class="btn btn-link" href="">AI Image Tools</a>
+                    <a class="btn btn-link" href="">AI Video Tools</a>
+                    <a class="btn btn-link" href="">AI Productivity</a>
+                    <a class="btn btn-link" href="">AI for Business</a>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">ToolNova AI</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="">Home</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js">
+        (function ($) {
+    "use strict";
+
+    // Spinner
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
+            }
+        }, 1);
+    };
+    spinner();
+    
+    
+    // Initiate the wowjs
+    new WOW().init();
+
+
+    // Sticky Navbar
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.sticky-top').addClass('bg-primary shadow-sm').css('top', '0px');
+        } else {
+            $('.sticky-top').removeClass('bg-primary shadow-sm').css('top', '-150px');
+        }
+    });
+
+
+    // Facts counter
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 2000
+    });
+    
+    
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
+    $('.back-to-top').click(function () {
+        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        return false;
+    });
+
+
+    // Testimonials carousel
+    $(".testimonial-carousel").owlCarousel({
+        items: 1,
+        autoplay: true,
+        smartSpeed: 1000,
+        dots: true,
+        loop: true,
+        nav: true,
+        navText : [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
+        ]
+    });
+    
+})(jQuery);
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".interactive-robot").forEach((robot) => {
+        const eyes = robot.querySelectorAll(".robot-eye-hotspot");
+        let eyeMode = 0;
+
+        const activate = (blue = false) => {
+            robot.classList.add("robot-active", "hand-wave");
+            eyes.forEach((eye) => {
+                eye.classList.toggle("is-lit", !blue);
+                eye.classList.toggle("is-blue", blue);
+            });
+            window.setTimeout(() => robot.classList.remove("hand-wave"), 1200);
+        };
+
+        robot.addEventListener("pointermove", (event) => {
+            const rect = robot.getBoundingClientRect();
+            const x = (event.clientX - rect.left) / rect.width;
+            const y = (event.clientY - rect.top) / rect.height;
+            if (x > .25 && x < .78 && y > .10 && y < .60) {
+                activate(false);
+            }
+        });
+
+        eyes.forEach((eye) => {
+            eye.addEventListener("click", (event) => {
+                event.stopPropagation();
+                eyeMode = eyeMode === 1 ? 2 : 1;
+                activate(eyeMode === 2);
+            });
+            eye.addEventListener("dblclick", (event) => {
+                event.stopPropagation();
+                eyeMode = eyeMode === 2 ? 1 : 2;
+                activate(eyeMode === 2);
+            });
+        });
+
+        robot.addEventListener("pointerleave", () => {
+            robot.classList.remove("robot-active");
+        });
+    });
+
+    const status = document.querySelector(".robot-status");
+    document.querySelectorAll(".interactive-robot").forEach((robot) => {
+        robot.addEventListener("click", () => {
+            if (status) status.textContent = "AI mode activated • Click an eye to switch red / blue";
+        });
+    });
+});
+
+
+/* =========================================
+   TOOLNOVA FIRST ROBOT EYE INTERACTION
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const firstRobot = document.querySelector(".hero-robot");
+
+    if (!firstRobot) return;
+
+    const eyes = firstRobot.querySelectorAll(".robot-eye-hotspot");
+
+    const colors = [
+        "#00eaff",
+        "#00ff88",
+        "#ff00ff",
+        "#ffd000",
+        "#ff4d4d",
+        "#7c4dff"
+    ];
+
+    let colorIndex = 0;
+
+    eyes.forEach(function (eye) {
+
+        eye.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            // Remove active from both eyes
+            eyes.forEach(function (otherEye) {
+                otherEye.classList.remove("active");
+                otherEye.style.removeProperty("--eye-color");
+            });
+
+            // Current color
+            const currentColor = colors[colorIndex];
+
+            // Activate clicked eye
+            eye.classList.add("active");
+            eye.style.setProperty("--eye-color", currentColor);
+
+            // Next color
+            colorIndex++;
+
+            if (colorIndex >= colors.length) {
+                colorIndex = 0;
+            }
+
+        });
+
+    });
+
+});
+
+
+(function ($) {
+    "use strict";
+
+    // =========================================
+    // Spinner
+    // =========================================
+    var spinner = function () {
+        setTimeout(function () {
+            if ($('#spinner').length > 0) {
+                $('#spinner').removeClass('show');
+            }
+        }, 1);
+    };
+
+    spinner();
+
+
+    // =========================================
+    // WOW Animation
+    // =========================================
+    new WOW().init();
+
+
+    // =========================================
+    // Sticky Navbar
+    // =========================================
+    $(window).scroll(function () {
+
+        if ($(this).scrollTop() > 300) {
+
+            $('.sticky-top')
+                .addClass('bg-primary shadow-sm')
+                .css('top', '0px');
+
+        } else {
+
+            $('.sticky-top')
+                .removeClass('bg-primary shadow-sm')
+                .css('top', '-150px');
+
+        }
+
+    });
+
+
+    // =========================================
+    // Facts Counter
+    // =========================================
+    $('[data-toggle="counter-up"]').counterUp({
+        delay: 10,
+        time: 2000
+    });
+
+
+    // =========================================
+    // Back To Top
+    // =========================================
+    $(window).scroll(function () {
+
+        if ($(this).scrollTop() > 100) {
+
+            $('.back-to-top').fadeIn('slow');
+
+        } else {
+
+            $('.back-to-top').fadeOut('slow');
+
+        }
+
+    });
+
+
+    $('.back-to-top').click(function () {
+
+        $('html, body').animate(
+            {
+                scrollTop: 0
+            },
+            1500,
+            'easeInOutExpo'
+        );
+
+        return false;
+
+    });
+
+
+    // =========================================
+    // Testimonials Carousel
+    // =========================================
+    $(".testimonial-carousel").owlCarousel({
+
+        items: 1,
+        autoplay: true,
+        smartSpeed: 1000,
+        dots: true,
+        loop: true,
+        nav: true,
+
+        navText: [
+            '<i class="bi bi-chevron-left"></i>',
+            '<i class="bi bi-chevron-right"></i>'
+        ]
+
+    });
+
+
+})(jQuery);
+
+
+
+
+
+/* =========================================================
+   TOOLNOVA ROBOT INTERACTION
+   FIRST HERO ROBOT = 7 DIFFERENT EYE COLORS
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* -----------------------------------------
+       FIRST PAGE HERO ROBOT ONLY
+    ----------------------------------------- */
+
+    const firstRobot = document.querySelector(".hero-robot");
+
+    if (firstRobot) {
+
+        const eyes = firstRobot.querySelectorAll(".robot-eye-hotspot");
+
+        /* 7 Eye Colors */
+
+        const eyeColors = [
+
+            "#ff0000",   // 1. RED
+            "#ffd400",   // 2. YELLOW
+            "#0066ff",   // 3. BLUE
+            "#00ff66",   // 4. GREEN
+            "#8a2be2",   // 5. PURPLE
+            "#ff1493",   // 6. PINK
+            "#ff7a00"    // 7. ORANGE
+
+        ];
+
+        let colorIndex = 0;
+
+
+        /* -----------------------------------------
+           CLICK ON EITHER EYE
+        ----------------------------------------- */
+
+        eyes.forEach(function (eye) {
+
+            eye.addEventListener("click", function (event) {
+
+                event.stopPropagation();
+
+
+                /* Current Color */
+
+                const currentColor = eyeColors[colorIndex];
+
+
+                /* Apply color to BOTH eyes */
+
+                eyes.forEach(function (otherEye) {
+
+                    otherEye.classList.add("active");
+
+                    otherEye.style.setProperty(
+                        "--eye-color",
+                        currentColor
+                    );
+
+                });
+
+
+                /* Robot active */
+
+                firstRobot.classList.add("robot-active");
+
+
+                /* Next color */
+
+                colorIndex++;
+
+                if (colorIndex >= eyeColors.length) {
+
+                    colorIndex = 0;
+
+                }
+
+            });
+
+        });
+
+
+        /* -----------------------------------------
+           HOVER EFFECT
+        ----------------------------------------- */
+
+        firstRobot.addEventListener("pointermove", function (event) {
+
+            const rect = firstRobot.getBoundingClientRect();
+
+            const x =
+                (event.clientX - rect.left) /
+                rect.width;
+
+            const y =
+                (event.clientY - rect.top) /
+                rect.height;
+
+
+            if (
+                x > 0.25 &&
+                x < 0.78 &&
+                y > 0.10 &&
+                y < 0.60
+            ) {
+
+                firstRobot.classList.add("robot-active");
+
+            }
+
+        });
+
+
+        /* -----------------------------------------
+           MOUSE LEAVE
+        ----------------------------------------- */
+
+        firstRobot.addEventListener("pointerleave", function () {
+
+            firstRobot.classList.remove("robot-active");
+
+        });
+
+    }
+
+
+    /* =========================================================
+       OTHER ROBOTS
+       Keep their normal interaction
+    ========================================================= */
+
+    document
+        .querySelectorAll(".interactive-robot:not(.hero-robot)")
+        .forEach(function (robot) {
+
+            const eyes =
+                robot.querySelectorAll(".robot-eye-hotspot");
+
+            let eyeMode = 0;
+
+
+            const activate = function (blue = false) {
+
+                robot.classList.add(
+                    "robot-active",
+                    "hand-wave"
+                );
+
+
+                eyes.forEach(function (eye) {
+
+                    eye.classList.toggle(
+                        "is-lit",
+                        !blue
+                    );
+
+                    eye.classList.toggle(
+                        "is-blue",
+                        blue
+                    );
+
+                });
+
+
+                window.setTimeout(function () {
+
+                    robot.classList.remove("hand-wave");
+
+                }, 1200);
+
+            };
+
+
+            robot.addEventListener(
+                "pointermove",
+                function (event) {
+
+                    const rect =
+                        robot.getBoundingClientRect();
+
+                    const x =
+                        (event.clientX - rect.left) /
+                        rect.width;
+
+                    const y =
+                        (event.clientY - rect.top) /
+                        rect.height;
+
+
+                    if (
+                        x > 0.25 &&
+                        x < 0.78 &&
+                        y > 0.10 &&
+                        y < 0.60
+                    ) {
+
+                        activate(false);
+
+                    }
+
+                }
+            );
+
+
+            eyes.forEach(function (eye) {
+
+                eye.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.stopPropagation();
+
+                        eyeMode =
+                            eyeMode === 1 ? 2 : 1;
+
+                        activate(
+                            eyeMode === 2
+                        );
+
+                    }
+                );
+
+
+                eye.addEventListener(
+                    "dblclick",
+                    function (event) {
+
+                        event.stopPropagation();
+
+                        eyeMode =
+                            eyeMode === 2 ? 1 : 2;
+
+                        activate(
+                            eyeMode === 2
+                        );
+
+                    }
+                );
+
+            });
+
+
+            robot.addEventListener(
+                "pointerleave",
+                function () {
+
+                    robot.classList.remove(
+                        "robot-active"
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =========================================================
+       HERO ROBOT STATUS TEXT
+    ========================================================= */
+
+    const status =
+        document.querySelector(".robot-status");
+
+
+    if (status && firstRobot) {
+
+        firstRobot.addEventListener(
+            "click",
+            function () {
+
+                status.textContent =
+                    "AI mode activated • Click the eyes to change color";
+
+            }
+        );
+
+    }
+
+});
+
+
+    </script>
+
+<!-- Right before closing </body> tag -->
+<script src="js/toolnova.js">
+    (function () {
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const robots = document.querySelectorAll(".toolnova-robot");
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        robots.forEach(robot => {
+            const eyesGroup = robot.querySelector(".robot-eyes-group");
+            const leftPupil = robot.querySelector(".left-pupil");
+            const rightPupil = robot.querySelector(".right-pupil");
+            const rightHand = robot.querySelector(".right-hand");
+            const leftHand = robot.querySelector(".left-hand");
+            
+            let mouseX = 0, mouseY = 0;
+            let currentX = 0, currentY = 0;
+
+            // 5. Hand / Wave Animation (Auto occasionally)
+            if (!prefersReducedMotion) {
+                setInterval(() => {
+                    if (Math.random() > 0.7) triggerWave(robot);
+                }, 8000);
+            }
+
+            robot.addEventListener("click", (e) => {
+                // Trigger wave when clicking hand
+                if (e.target.classList.contains('robot-hand')) {
+                    triggerWave(robot);
+                }
+            });
+
+            // 1. SVG Eye Hover & 8. Mouse-Follow Interaction
+            if (!isTouchDevice && !prefersReducedMotion) {
+                window.addEventListener("mousemove", (e) => {
+                    const rect = robot.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    // Calculate distance from center of robot
+                    mouseX = (e.clientX - centerX) / (rect.width / 2);
+                    mouseY = (e.clientY - centerY) / (rect.height / 2);
+                });
+
+                // Animation loop for smooth lerp movement
+                function animateEyes() {
+                    currentX += (mouseX - currentX) * 0.08;
+                    currentY += (mouseY - currentY) * 0.08;
+
+                    // Limit movement
+                    const maxOffsetX = 4;
+                    const maxOffsetY = 3;
+                    const offsetX = Math.max(-maxOffsetX, Math.min(maxOffsetX, currentX * maxOffsetX));
+                    const offsetY = Math.max(-maxOffsetY, Math.min(maxOffsetY, currentY * maxOffsetY));
+
+                    if (!robot.classList.contains('ai-active')) {
+                        leftPupil.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+                        rightPupil.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+                        
+                        // Subtle head tilt
+                        const head = robot.querySelector('.robot-base-svg');
+                        head.style.transform = `rotate(${currentX * 3}deg)`;
+                    }
+                    requestAnimationFrame(animateEyes);
+                }
+                animateEyes();
+            }
+
+            // 2. SVG Active AI Mode Toggle
+            robot.addEventListener("click", (e) => {
+                // If clicking anywhere except the hand, toggle AI mode
+                if (!e.target.classList.contains('robot-hand')) {
+                    robot.classList.toggle("ai-active");
+                    
+                    const status = document.querySelector(".robot-status");
+                    if (status) {
+                        if (robot.classList.contains("ai-active")) {
+                            status.textContent = "AI Mode Activated • Processing environment...";
+                        } else {
+                            status.textContent = "AI Mode Deactivated • Move over the robot to interact";
+                        }
+                    }
+                }
+            });
+
+            // 9. Mobile-Friendly Wave Trigger
+            if (isTouchDevice) {
+                rightHand.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    triggerWave(robot);
+                });
+            }
+        });
+
+        function triggerWave(robot) {
+            if (prefersReducedMotion) return;
+            robot.classList.add("waving");
+            setTimeout(() => {
+                robot.classList.remove("waving");
+            }, 1600);
+        }
+    });
+})();
+
+
+(function () {
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const robots = document.querySelectorAll(".toolnova-robot");
+        
+        // Touch detection & Accessibility check
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        robots.forEach(robot => {
+            const eyesGroup = robot.querySelector(".robot-eyes-group");
+            const headGroup = robot.querySelector(".robot-head-group");
+            const leftPupil = robot.querySelector(".left-pupil");
+            const rightPupil = robot.querySelector(".right-pupil");
+            
+            let mouseX = 0, mouseY = 0;
+            let currentX = 0, currentY = 0;
+
+            // 5. Hand Wave (Automatic trigger every 5-12 seconds)
+            if (!prefersReducedMotion) {
+                setInterval(() => {
+                    if (Math.random() > 0.6) triggerWave(robot);
+                }, 8000);
+            }
+
+            // Hand Click/Tap to trigger wave
+            const hands = robot.querySelectorAll(".robot-hand");
+            hands.forEach(hand => {
+                hand.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    triggerWave(robot);
+                });
+            });
+
+            // 2. AI Mode Toggle on Body Click
+            robot.addEventListener("click", (e) => {
+                if (!e.target.classList.contains('robot-hand')) {
+                    robot.classList.toggle("ai-active");
+                    const status = robot.querySelector(".robot-status");
+                    if (status) {
+                        status.textContent = robot.classList.contains("ai-active") 
+                            ? "AI Mode Activated • Processing environment..." 
+                            : "AI Mode Deactivated • Move over the robot to interact";
+                    }
+                }
+            });
+
+            // 8. Mouse-Follow Interaction (Lerp + requestAnimationFrame)
+            // Only run if not touch device and reduced motion is not preferred
+            if (!isTouchDevice && !prefersReducedMotion) {
+                window.addEventListener("mousemove", (e) => {
+                    const rect = robot.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    // Calculate distance from robot center (-1 to 1 ratio)
+                    mouseX = (e.clientX - centerX) / (rect.width / 2);
+                    mouseY = (e.clientY - centerY) / (rect.height / 2);
+                });
+
+                function animateEyes() {
+                    // Smooth Lerp
+                    currentX += (mouseX - currentX) * 0.08;
+                    currentY += (mouseY - currentY) * 0.08;
+
+                    // Limit pupil movement inside socket
+                    const maxOffset = 4;
+                    const offsetX = Math.max(-maxOffset, Math.min(maxOffset, currentX * maxOffset));
+                    const offsetY = Math.max(-maxOffset, Math.min(maxOffset, currentY * maxOffset));
+
+                    // Apply transform to pupils (Mouse follow)
+                    if (!robot.classList.contains('ai-active')) {
+                        leftPupil.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+                        rightPupil.setAttribute('transform', `translate(${offsetX}, ${offsetY})`);
+                        
+                        // Subtle head tilt (max 3deg)
+                        if (headGroup) {
+                            headGroup.setAttribute('transform', `rotate(${currentX * 3}, 150, 100)`);
+                        }
+                    }
+                    requestAnimationFrame(animateEyes);
+                }
+                animateEyes();
+            }
+        });
+
+        function triggerWave(robot) {
+            if (prefersReducedMotion) return;
+            robot.classList.add("waving");
+            setTimeout(() => {
+                robot.classList.remove("waving");
+            }, 1600); // 0.8s * 2 waves = 1.6s
+        }
+    });
+})();
+
+
+
+(function () {
+    "use strict";
+
+    // =========================================
+    // INITIALIZATION
+    // =========================================
+    document.addEventListener("DOMContentLoaded", () => {
+        const robotStage = document.getElementById("robotStage");
+        const robotHover = document.getElementById("robotHover");
+        const robotHead = document.getElementById("robotHead");
+        const leftPupil = document.getElementById("leftPupil");
+        const rightPupil = document.getElementById("rightPupil");
+        const rightHand = document.getElementById("rightHand");
+        const leftHand = document.getElementById("leftHand");
+        const aiToggleBtn = document.getElementById("aiToggleBtn");
+        
+        // State Flags
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        
+        // Pointer Follow Variables
+        let targetX = 0, targetY = 0; // Normalized -1 to 1
+        let currentX = 0, currentY = 0; // Smoothed lerp values
+        let isVisible = true;
+
+        // =========================================
+        // PERFORMANCE (IntersectionObserver)
+        // =========================================
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isVisible = entry.isIntersecting;
+                });
+            }, { threshold: 0.1 });
+            observer.observe(robotStage);
+        }
+
+        // =========================================
+        // POINTER FOLLOW & HOVER RESPONSE (Centralized RAF Loop)
+        // =========================================
+        if (!isTouchDevice && !prefersReducedMotion) {
+            window.addEventListener("pointermove", (e) => {
+                const rect = robotStage.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                // Normalize coordinates to -1 to 1
+                targetX = (e.clientX - centerX) / (rect.width / 2);
+                targetY = (e.clientY - centerY) / (rect.height / 2);
+                
+                // Clamp values
+                targetX = Math.max(-1, Math.min(1, targetX));
+                targetY = Math.max(-1, Math.min(1, targetY));
+            });
+
+            window.addEventListener("pointerleave", () => {
+                targetX = 0;
+                targetY = 0;
+            });
+
+            function animateLoop() {
+                if (isVisible) {
+                    // Smooth interpolation (Lerp)
+                    currentX += (targetX - currentX) * 0.05;
+                    currentY += (targetY - currentY) * 0.05;
+
+                    // 11. EFFECT 08: Apply Eye Follow (Max 6px movement for larger eyes)
+                    const eyeOffsetX = currentX * 6;
+                    const eyeOffsetY = currentY * 6;
+                    leftPupil.setAttribute('transform', `translate(${eyeOffsetX}, ${eyeOffsetY})`);
+                    rightPupil.setAttribute('transform', `translate(${eyeOffsetX}, ${eyeOffsetY})`);
+
+                    // 11. EFFECT 08: Apply Subtle Head Tilt (Max 4deg)
+                    if (robotHead) {
+                        const tiltY = currentX * 4; 
+                        const tiltX = -currentY * 3;
+                        robotHead.setAttribute('transform', `rotate(${tiltY}, 200, 220) rotate(${tiltX}, 200, 220)`);
+                    }
+
+                    // 7. EFFECT 07: Hover Tilt Response
+                    if (robotHover) {
+                        const scale = 1.03;
+                        const hoverTiltY = currentX * 3;
+                        const hoverTiltX = -currentY * 2;
+                        // Combines base hover scale with dynamic tilt
+                        robotHover.style.transform = `scale(${scale}) rotate(${hoverTiltY}deg) rotate(${hoverTiltX}deg)`;
+                    }
+                }
+                requestAnimationFrame(animateLoop);
+            }
+            animateLoop();
+        }
+
+        // =========================================
+        // AI MODE STATE
+        // =========================================
+        aiToggleBtn.addEventListener("click", () => {
+            const robot = robotStage.querySelector('.tn-robot');
+            const isActive = robot.classList.toggle("ai-active");
+            
+            aiToggleBtn.setAttribute("aria-pressed", isActive);
+            aiToggleBtn.textContent = isActive ? "Deactivate AI Mode" : "Activate AI Mode";
+            aiToggleBtn.setAttribute("aria-label", isActive ? "Deactivate AI mode" : "Activate AI mode");
+        });
+
+        // =========================================
+        // HAND WAVE INTERACTION
+        // =========================================
+        let waveTimeout = null;
+        
+        function triggerWave() {
+            const robot = robotStage.querySelector('.tn-robot');
+            if (robot.classList.contains("hand-waving") || prefersReducedMotion) return;
+            
+            robot.classList.add("hand-waving");
+            setTimeout(() => robot.classList.remove("hand-waving"), 1600); // 0.8s * 2 loops
+        }
+
+        // Event Delegation for Hands
+        document.body.addEventListener("click", (e) => {
+            if (e.target.classList.contains("tn-hand")) {
+                triggerWave();
+            }
+        });
+
+        // Keyboard accessibility for hands
+        document.body.addEventListener("keydown", (e) => {
+            if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("tn-hand")) {
+                e.preventDefault();
+                triggerWave();
+            }
+        });
+
+        // Automatic Occasional Wave (15-30s)
+        if (!prefersReducedMotion) {
+            function scheduleNextWave() {
+                const delay = 15000 + Math.random() * 15000; // 15s to 30s
+                waveTimeout = setTimeout(() => {
+                    triggerWave();
+                    scheduleNextWave();
+                }, delay);
+            }
+            scheduleNextWave();
+        }
+
+        // =========================================
+        // RESPONSIVE BEHAVIOR (Touch Adjustments)
+        // =========================================
+        if (isTouchDevice) {
+            // Remove pointer events that might trigger sticky hover on mobile
+            document.querySelectorAll('.tn-pupil, .tn-robot-hover').forEach(el => {
+                el.style.transition = 'none';
+            });
+        }
+    });
+})();
+
+
+(function () {
+    "use strict";
+
+    // =========================================
+    // INITIALIZATION
+    // =========================================
+    document.addEventListener("DOMContentLoaded", () => {
+        const robotStage = document.getElementById("robotStage");
+        const robotHover = document.getElementById("robotHover");
+        const robotHead = document.getElementById("robotHead");
+        const robotMain = document.getElementById("robotMain");
+        const leftPupil = document.getElementById("leftPupil");
+        const rightPupil = document.getElementById("rightPupil");
+        const rightHand = document.getElementById("rightHand");
+        const leftHand = document.getElementById("leftHand");
+        const aiToggleBtn = document.getElementById("aiToggleBtn");
+        const aiCoreBtn = document.getElementById("aiCoreBtn");
+        const callout = document.getElementById("featureCallout");
+        
+        // State Flags
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        
+        let targetX = 0, targetY = 0;
+        let currentX = 0, currentY = 0;
+        let isVisible = true;
+        let isChestOpen = false;
+        let featureInterval = null;
+
+        // =========================================
+        // PERFORMANCE (IntersectionObserver)
+        // =========================================
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => isVisible = entry.isIntersecting);
+            }, { threshold: 0.1 });
+            observer.observe(robotStage);
+        }
+
+        // =========================================
+        // POINTER FOLLOW & HOVER RESPONSE
+        // =========================================
+        if (!isTouchDevice && !prefersReducedMotion) {
+            window.addEventListener("pointermove", (e) => {
+                const rect = robotStage.getBoundingClientRect();
+                targetX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+                targetY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+                targetX = Math.max(-1, Math.min(1, targetX));
+                targetY = Math.max(-1, Math.min(1, targetY));
+            });
+
+            window.addEventListener("pointerleave", () => { targetX = 0; targetY = 0; });
+
+            function animateLoop() {
+                if (isVisible) {
+                    currentX += (targetX - currentX) * 0.05;
+                    currentY += (targetY - currentY) * 0.05;
+
+                    const eyeOffsetX = currentX * 6;
+                    const eyeOffsetY = currentY * 6;
+                    leftPupil.setAttribute('transform', `translate(${eyeOffsetX}, ${eyeOffsetY})`);
+                    rightPupil.setAttribute('transform', `translate(${eyeOffsetX}, ${eyeOffsetY})`);
+
+                    if (robotHead) {
+                        robotHead.setAttribute('transform', `rotate(${currentX * 4}, 200, 220) rotate(${-currentY * 3}, 200, 220)`);
+                    }
+
+                    if (robotHover) {
+                        robotHover.style.transform = `scale(1.03) rotate(${currentX * 3}deg) rotate(${-currentY * 2}deg)`;
+                    }
+                }
+                requestAnimationFrame(animateLoop);
+            }
+            animateLoop();
+        }
+
+        // =========================================
+        // AI MODE STATE
+        // =========================================
+        aiToggleBtn.addEventListener("click", () => {
+            const isActive = robotMain.classList.toggle("ai-active");
+            aiToggleBtn.setAttribute("aria-pressed", isActive);
+            aiToggleBtn.textContent = isActive ? "Deactivate AI Mode" : "Activate AI Mode";
+        });
+
+        // =========================================
+        // HAND WAVE INTERACTION
+        // =========================================
+        function triggerWave() {
+            if (robotMain.classList.contains("hand-waving") || prefersReducedMotion) return;
+            robotMain.classList.add("hand-waving");
+            setTimeout(() => robotMain.classList.remove("hand-waving"), 1600);
+        }
+
+        document.body.addEventListener("click", (e) => {
+            if (e.target.classList.contains("tn-hand")) triggerWave();
+            if ((e.key === "Enter" || e.key === " ") && e.target.classList.contains("tn-hand")) {
+                e.preventDefault(); triggerWave();
+            }
+        });
+
+        // =========================================
+        // CHEST CORE OPENING & FEATURE EXPLORER
+        // =========================================
+        const features = [
+            { x: 50, y: 15, title: "AI Eye Tracking", desc: "Advanced eye movement follows user interaction naturally." },
+            { x: 50, y: 8, title: "AI Processing Interface", desc: "Visual indicators represent active AI processing states." },
+            { x: 35, y: 19, title: "Synthetic Power Network", desc: "Engineered conduits distribute power through the robotic face system." },
+            { x: 50, y: 21, title: "AI Speech Interface", desc: "Designed for future voice and facial-expression synchronization." },
+            { x: 50, y: 25, title: "Adaptive Neck System", desc: "Multi-axis mechanical structure supports smooth head movement." },
+            { x: 50, y: 40, title: "Central AI Core", desc: "Primary energy and processing interface of the robot." },
+            { x: 50, y: 42, title: "Power Distribution", desc: "Engineered energy pathways distribute power throughout the robot." },
+            { x: 40, y: 45, title: "Dynamic Conduit System", desc: "Layered synthetic cables and fiber channels connect robotic systems." },
+            { x: 15, y: 35, title: "Adaptive Shoulder Mechanism", desc: "Multi-joint mechanical structure enables natural arm movement." },
+            { x: 85, y: 35, title: "AI Gesture System", desc: "Robotic arms support expressive AI-driven movements." },
+            { x: 15, y: 55, title: "Precision Hand System", desc: "Individual mechanical finger segments allow detailed gesture control." },
+            { x: 50, y: 70, title: "Robotic Mobility System", desc: "Stabilized mechanical joints support balanced movement." },
+            { x: 50, y: 90, title: "Balance & Grounding", desc: "Mechanical foot structures provide stability and controlled movement." }
+        ];
+
+        function startFeatureExplorer() {
+            let i = 0;
+            callout.classList.add("visible");
+            
+            function showNext() {
+                if (i >= features.length) {
+                    closeChest();
+                    return;
+                }
+                const f = features[i];
+                callout.style.left = `${f.x}%`;
+                callout.style.top = `${f.y}%`;
+                callout.querySelector("#featureTitle").textContent = f.title;
+                callout.querySelector("#featureDesc").textContent = f.desc;
+                i++;
+            }
+            showNext();
+            featureInterval = setInterval(showNext, 2500);
+        }
+
+        function closeChest() {
+            clearInterval(featureInterval);
+            callout.classList.remove("visible");
+            robotMain.classList.remove("chest-open", "core-active");
+            isChestOpen = false;
+            aiCoreBtn.setAttribute("aria-label", "Open AI Core");
+        }
+
+        aiCoreBtn.addEventListener("click", () => {
+            if (isChestOpen) {
+                closeChest();
+            } else {
+                isChestOpen = true;
+                robotMain.classList.add("core-active");
+                aiCoreBtn.setAttribute("aria-label", "Close AI Core");
+                
+                setTimeout(() => {
+                    robotMain.classList.add("chest-open");
+                    startFeatureExplorer();
+                }, 500);
+
+                // Auto close after 15 seconds
+                setTimeout(() => {
+                    if (isChestOpen) closeChest();
+                }, 15000);
+            }
+        });
+
+        aiCoreBtn.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                aiCoreBtn.click();
+            }
+        });
+    });
+})();
+
+
+
+// FAHAD
+(function () {
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const robotStage = document.getElementById("robotStage");
+        const robotHover = document.getElementById("robotHover");
+        const robotMain = document.getElementById("robotMain");
+        const robotHead = document.getElementById("robotHead");
+        const leftPupil = document.getElementById("leftPupil");
+        const rightPupil = document.getElementById("rightPupil");
+        const aiCoreBtn = document.getElementById("aiCoreBtn");
+        const callout = document.getElementById("featureCallout");
+        
+        let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+        let isVisible = true;
+        let activeMode = null; // To prevent overlapping heavy animations
+
+        // Intersection Observer for performance
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver((entries) => {
+                entries.forEach(e => isVisible = e.isIntersecting);
+            }, { threshold: 0.1 }).observe(robotStage);
+        }
+
+        // Centralized Pointer Follow
+        window.addEventListener("pointermove", (e) => {
+            const rect = robotStage.getBoundingClientRect();
+            targetX = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2);
+            targetY = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2);
+            targetX = Math.max(-1, Math.min(1, targetX));
+            targetY = Math.max(-1, Math.min(1, targetY));
+        });
+
+        function animateLoop() {
+            if (isVisible && activeMode !== 'workout' && activeMode !== 'transform') {
+                currentX += (targetX - currentX) * 0.05;
+                currentY += (targetY - currentY) * 0.05;
+                leftPupil.setAttribute('transform', `translate(${currentX * 6}, ${currentY * 6})`);
+                rightPupil.setAttribute('transform', `translate(${currentX * 6}, ${currentY * 6})`);
+                robotHead.setAttribute('transform', `rotate(${currentX * 4}, 200, 220) rotate(${-currentY * 3}, 200, 220)`);
+                robotHover.style.transform = `scale(1.02) rotate(${currentX * 2}deg)`;
+            }
+            requestAnimationFrame(animateLoop);
+        }
+        animateLoop();
+
+        // --- UI CONTROL HANDLING ---
+        const setMode = (mode, className) => {
+            activeMode = mode;
+            robotMain.className = "tn-robot"; // reset
+            if (className) robotMain.classList.add(className);
+        };
+
+        document.getElementById('aiToggleBtn').addEventListener('click', (e) => {
+            robotMain.classList.toggle("ai-active");
+            e.target.classList.toggle("active");
+        });
+
+        document.getElementById('voiceBtn').addEventListener('click', (e) => {
+            if (activeMode === 'voice') return;
+            setMode('voice', 'speaking');
+            e.target.classList.add("active");
+            
+            const text = "Hello. I am the ToolNova A I. I am designed to assist you with advanced technological tasks.";
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.rate = 0.9; utterance.pitch = 0.8;
+            
+            utterance.onend = () => {
+                setMode(null);
+                e.target.classList.remove("active");
+            };
+            window.speechSynthesis.speak(utterance);
+        });
+
+        document.getElementById('coreBtn').addEventListener('click', (e) => {
+            if (robotMain.classList.contains("chest-open")) {
+                robotMain.classList.remove("chest-open", "core-active");
+                callout.classList.remove("visible");
+                e.target.classList.remove("active");
+            } else {
+                robotMain.classList.add("core-active", "chest-open");
+                e.target.classList.add("active");
+                startFeatureExplorer();
+            }
+        });
+
+        document.getElementById('squatBtn').addEventListener('click', (e) => {
+            setMode('workout', 'squat');
+            e.target.classList.add("active");
+            setTimeout(() => { setMode(null); e.target.classList.remove("active"); }, 6000);
+        });
+
+        document.getElementById('pushupBtn').addEventListener('click', (e) => {
+            setMode('workout', 'pushup');
+            e.target.classList.add("active");
+            setTimeout(() => { setMode(null); e.target.classList.remove("active"); }, 6000);
+        });
+
+        document.getElementById('transformBtn').addEventListener('click', (e) => {
+            if (robotMain.classList.contains("transforming")) {
+                setMode(null);
+                e.target.classList.remove("active");
+            } else {
+                setMode('transform', 'transforming');
+                e.target.classList.add("active");
+            }
+        });
+
+        document.getElementById('spinBtn').addEventListener('click', (e) => {
+            setMode('spin', 'spinning');
+            e.target.classList.add("active");
+            setTimeout(() => { setMode(null); e.target.classList.remove("active"); }, 3100);
+        });
+
+        // Hand Wave
+        document.querySelectorAll('.tn-hand').forEach(hand => {
+            hand.addEventListener('click', () => {
+                if (activeMode) return;
+                setMode('waving', 'waving');
+                setTimeout(() => setMode(null), 1600);
+            });
+        });
+
+        // --- FEATURE EXPLORER ---
+        const features = [
+            { x: 60, y: 15, title: "AI Eye Tracking", desc: "Advanced optical sensors follow user interaction." },
+            { x: 50, y: 25, title: "AI Voice Interface", desc: "Synthesized speech with mechanical lip-sync." },
+            { x: 50, y: 40, title: "Central AI Core", desc: "Primary processing and energy distribution." },
+            { x: 30, y: 45, title: "Internal Chamber", desc: "Synthetic gears and power conduits." },
+            { x: 80, y: 35, title: "Adaptive Shoulder", desc: "Multi-axis mechanical joint." },
+            { x: 80, y: 55, title: "Precision Hand", desc: "Individual actuator control." },
+            { x: 50, y: 70, title: "Mobility System", desc: "Stabilized knee joints for balance." }
+        ];
+
+        function startFeatureExplorer() {
+            let i = 0;
+            callout.classList.add("visible");
+            
+            function showNext() {
+                if (i >= features.length) {
+                    callout.classList.remove("visible");
+                    return;
+                }
+                const f = features[i];
+                callout.style.left = `${f.x}%`;
+                callout.style.top = `${f.y}%`;
+                callout.querySelector("#featureTitle").textContent = f.title;
+                callout.querySelector("#featureDesc").textContent = f.desc;
+                i++;
+            }
+            showNext();
+            const interval = setInterval(() => {
+                if (!robotMain.classList.contains("chest-open")) {
+                    clearInterval(interval); return;
+                }
+                showNext();
+                if (i === features.length) clearInterval(interval);
+            }, 2500);
+        }
+
+        // --- AUTO DEMO MODE ---
+        document.getElementById('autoBtn').addEventListener('click', async (e) => {
+            if (activeMode === 'auto') return;
+            e.target.classList.add("active");
+            activeMode = 'auto';
+            
+            const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+            const btn = (id) => document.getElementById(id);
+
+            btn('voiceBtn').click(); await sleep(4000);
+            btn('coreBtn').click(); await sleep(8000); btn('coreBtn').click();
+            btn('squatBtn').click(); await sleep(6000);
+            btn('pushupBtn').click(); await sleep(6000);
+            btn('transformBtn').click(); await sleep(4000); btn('transformBtn').click(); await sleep(3000);
+            btn('spinBtn').click(); await sleep(3100);
+            
+            e.target.classList.remove("active");
+            activeMode = null;
+        });
+    });
+})();
+
+
+// WAQAS
+</script>
+
+<!-- <script id="toolnova-interactions">
+</script> -->
+
+</body>
+
+</html>
